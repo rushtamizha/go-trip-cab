@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import { company, localTaxis, localNotes } from '@/lib/data';
 import { ArrowLeft, Phone, MessageCircle, MapPin, Clock, IndianRupee, Users, Shield, Car, AlertCircle, Check, X, CreditCard, Route, Gauge } from 'lucide-react';
+import PolicyAccordion from '@/components/ui/TermsConditions';
 
 export default function LocalDetail() {
   const { id } = useParams();
@@ -65,7 +66,7 @@ export default function LocalDetail() {
             <div className="bg-orange-50 rounded-2xl p-5 text-center flex-shrink-0 min-w-[160px]">
               <p className="mb-1 text-sm text-gray-500">Package Fare</p>
               <p className="text-3xl font-bold text-orange-600">&#8377;{vehicle.fare.toLocaleString('en-IN')}</p>
-              <p className="mt-1 text-xs text-gray-400">{vehicle.hours}Hrs / {vehicle.kms}Kms</p>
+              <p className="mt-1 text-sm text-gray-400">{vehicle.hours}Hrs / {vehicle.kms}Kms</p>
             </div>
           </div>
         </div>
@@ -75,23 +76,23 @@ export default function LocalDetail() {
           <h2 className="flex items-center gap-2 mb-4 text-xl font-bold text-gray-900"><IndianRupee className="w-5 h-5 text-orange-500" />Fare Details</h2>
           <div className="space-y-3">
             <div className="flex items-center justify-between p-4 bg-orange-50 rounded-xl">
-              <div className="flex items-center gap-3"><div className="flex items-center justify-center w-10 h-10 bg-orange-500 rounded-xl"><IndianRupee className="w-5 h-5 text-white" /></div><div><h4 className="text-sm font-bold text-gray-800">Base Package</h4><p className="text-xs text-gray-500">{vehicle.hours} Hours & {vehicle.kms} Kms included</p></div></div>
+              <div className="flex items-center gap-3"><div className="flex items-center justify-center w-10 h-10 bg-orange-500 rounded-xl"><IndianRupee className="w-5 h-5 text-white" /></div><div><h4 className="text-sm font-bold text-gray-800">Base Package</h4><p className="text-sm text-gray-500">{vehicle.hours} Hours & {vehicle.kms} Kms included</p></div></div>
               <p className="text-lg font-bold text-orange-600">&#8377;{vehicle.fare.toLocaleString('en-IN')}</p>
             </div>
             <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
-              <div className="flex items-center gap-3"><div className="flex items-center justify-center w-10 h-10 bg-gray-200 rounded-xl"><Clock className="w-5 h-5 text-gray-600" /></div><div><h4 className="text-sm font-bold text-gray-800">Hours Included</h4><p className="text-xs text-gray-500">Included in base package</p></div></div>
+              <div className="flex items-center gap-3"><div className="flex items-center justify-center w-10 h-10 bg-gray-200 rounded-xl"><Clock className="w-5 h-5 text-gray-600" /></div><div><h4 className="text-sm font-bold text-gray-800">Hours Included</h4><p className="text-sm text-gray-500">Included in base package</p></div></div>
               <p className="text-lg font-bold text-gray-700">{vehicle.hours} Hours</p>
             </div>
             <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
-              <div className="flex items-center gap-3"><div className="flex items-center justify-center w-10 h-10 bg-gray-200 rounded-xl"><Route className="w-5 h-5 text-gray-600" /></div><div><h4 className="text-sm font-bold text-gray-800">Kms Included</h4><p className="text-xs text-gray-500">Included in base package</p></div></div>
+              <div className="flex items-center gap-3"><div className="flex items-center justify-center w-10 h-10 bg-gray-200 rounded-xl"><Route className="w-5 h-5 text-gray-600" /></div><div><h4 className="text-sm font-bold text-gray-800">Kms Included</h4><p className="text-sm text-gray-500">Included in base package</p></div></div>
               <p className="text-lg font-bold text-gray-700">{vehicle.kms} Kms</p>
             </div>
             <div className="flex items-center justify-between p-4 bg-red-50 rounded-xl">
-              <div className="flex items-center gap-3"><div className="flex items-center justify-center w-10 h-10 bg-red-100 rounded-xl"><Gauge className="w-5 h-5 text-red-600" /></div><div><h4 className="text-sm font-bold text-gray-800">Extra Per Km</h4><p className="text-xs text-gray-500">Beyond {vehicle.kms} kms</p></div></div>
+              <div className="flex items-center gap-3"><div className="flex items-center justify-center w-10 h-10 bg-red-100 rounded-xl"><Gauge className="w-5 h-5 text-red-600" /></div><div><h4 className="text-sm font-bold text-gray-800">Extra Per Km</h4><p className="text-sm text-gray-500">Beyond {vehicle.kms} kms</p></div></div>
               <p className="text-lg font-bold text-red-600">&#8377;{vehicle.extraKm}/km</p>
             </div>
             <div className="flex items-center justify-between p-4 bg-red-50 rounded-xl">
-              <div className="flex items-center gap-3"><div className="flex items-center justify-center w-10 h-10 bg-red-100 rounded-xl"><Clock className="w-5 h-5 text-red-600" /></div><div><h4 className="text-sm font-bold text-gray-800">Extra Per Hour</h4><p className="text-xs text-gray-500">Beyond {vehicle.hours} hours</p></div></div>
+              <div className="flex items-center gap-3"><div className="flex items-center justify-center w-10 h-10 bg-red-100 rounded-xl"><Clock className="w-5 h-5 text-red-600" /></div><div><h4 className="text-sm font-bold text-gray-800">Extra Per Hour</h4><p className="text-sm text-gray-500">Beyond {vehicle.hours} hours</p></div></div>
               <p className="text-lg font-bold text-red-600">&#8377;{vehicle.extraHr}/hr</p>
             </div>
           </div>
@@ -133,15 +134,16 @@ export default function LocalDetail() {
           <ul className="space-y-3">
             {localNotes.map((item, i) => (
               <li key={i} className="flex items-start gap-3 p-3 bg-orange-50 rounded-xl">
-                <div className="flex items-center justify-center flex-shrink-0 w-6 h-6 text-xs font-bold text-white bg-orange-500 rounded-lg">{i + 1}</div>
+                <div className="flex items-center justify-center flex-shrink-0 w-6 h-6 text-sm font-bold text-white bg-orange-500 rounded-lg">{i + 1}</div>
                 <span className="text-sm text-gray-700">{item}</span>
               </li>
             ))}
           </ul>
         </div>
+        <PolicyAccordion/>
 
         {/* Payment */}
-        <div className="p-6 mb-6 bg-white rounded-2xl">
+        <div className="p-6 my-6 bg-white rounded-2xl">
           <h2 className="flex items-center gap-2 mb-3 text-lg font-bold text-gray-900"><CreditCard className="w-5 h-5 text-orange-500" />Payment Methods</h2>
           <div className="flex flex-wrap gap-2">{company.paymentMethods.map((m, i) => (<span key={i} className="px-4 py-2 text-sm font-medium text-orange-700 rounded-full bg-orange-50">{m}</span>))}</div>
         </div>
@@ -155,7 +157,7 @@ export default function LocalDetail() {
                 <div key={v.id} onClick={() => { router.push(`/local/${v.id}`); window.scrollTo(0,0); }} className="p-4 transition-all bg-white border border-orange-100 shadow-md cursor-pointer rounded-xl hover:shadow-lg">
                   <div className="mb-3 overflow-hidden rounded-lg h-28"><img src={v.image} alt={v.name} className="object-cover w-full h-full" /></div>
                   <h3 className="text-sm font-bold text-gray-900">{v.name}</h3>
-                  <p className="text-xs text-gray-500">{v.models} &bull; {v.seats}+1 Seater</p>
+                  <p className="text-sm text-gray-500">{v.models} &bull; {v.seats}+1 Seater</p>
                   <p className="mt-1 text-lg font-bold text-orange-600">&#8377;{v.fare.toLocaleString('en-IN')}</p>
                 </div>
               ))}
@@ -169,13 +171,13 @@ export default function LocalDetail() {
           <p className="mb-6 text-orange-100">Explore Bangalore city with comfort</p>
           <div className="flex flex-col justify-center gap-3 sm:flex-row">
             <a href={`tel:${company.phone}`} className="inline-flex items-center justify-center gap-2 px-8 py-3 font-bold text-orange-600 transition-colors bg-white rounded-xl hover:bg-orange-50"><Phone className="w-5 h-5" />Call {company.phoneDisplay}</a>
-            <a href={`https://wa.me/${company.whatsapp}?text=Hi, I want to book ${vehicle.name} for local rental in Bangalore`} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-8 py-3 font-bold text-white transition-colors bg-green-500 rounded-xl hover:bg-green-600"><MessageCircle className="w-5 h-5" />WhatsApp</a>
+            <a href={`https://wa.me/${company.whatsapp}?text=Booking Request: ${vehicle.name}`} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-8 py-3 font-bold text-white transition-colors bg-green-500 rounded-xl hover:bg-green-600"><MessageCircle className="w-5 h-5" />WhatsApp</a>
           </div>
         </div>
       </div>
 
       <div className="py-6 text-center bg-gray-900"><p className="text-sm text-gray-500">&copy; 2025 {company.name}. All rights reserved.</p></div>
-      <a href={`https://wa.me/${company.whatsapp}?text=Hi, I want to book ${vehicle.name}`} target="_blank" rel="noreferrer" className="fixed z-50 p-4 text-white transition-all bg-green-500 rounded-full shadow-2xl bottom-6 right-6 hover:bg-green-600 hover:scale-110"><MessageCircle className="w-7 h-7" /></a>
+      <a href={`https://wa.me/${company.whatsapp}?text=Booking Request: ${vehicle.name}`} target="_blank" rel="noreferrer" className="fixed z-50 p-4 text-white transition-all bg-green-500 rounded-full shadow-2xl bottom-6 right-6 hover:bg-green-600 hover:scale-110"><MessageCircle className="w-7 h-7" /></a>
     </div>
   );
 }

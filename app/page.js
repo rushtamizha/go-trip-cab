@@ -6,10 +6,10 @@ import { company, heroImages, airportTaxis, airportPolicy, localTaxis, localNote
 
 
 const TABS = [
+  { id: 'tour', label: 'Tour Packages', icon: Map },
   { id: 'airport', label: 'Airport', icon: Plane },
   { id: 'outstation', label: 'Outstation', icon: Navigation },
   { id: 'local', label: 'Local', icon: Car },
-  { id: 'tour', label: 'Tour Packages', icon: Map },
 ];
 
 // Hero Slider
@@ -45,16 +45,16 @@ function AirportCard({ cab, onClick }) {
     <div onClick={() => onClick(cab.id)} className="overflow-hidden transition-all duration-300 bg-white border border-orange-100 shadow-sm cursor-pointer rounded-2xl hover:shadow-md group">
       <div className="relative overflow-hidden h-44">
         <img src={cab.image} alt={cab.name} className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105" />
-        <div className="absolute px-3 py-1 text-xs font-bold text-white bg-orange-500 rounded-full top-3 right-3">{cab.seats}+1 Seater</div>
+        <div className="absolute px-3 py-1 text-sm font-bold text-white bg-orange-500 rounded-full top-3 right-3">{cab.seats}+1 Seater</div>
       </div>
       <div className="p-5">
         <h3 className="mb-1 text-lg font-bold text-gray-900 transition-colors group-hover:text-orange-600">{cab.name}</h3>
-        <p className="mb-3 text-xs text-gray-400">{cab.models}</p>
+        <p className="mb-3 text-sm text-gray-400">{cab.models}</p>
         <div className="mb-4 space-y-2">
           <div className="flex items-center gap-2"><Users className="w-4 h-4 text-orange-500" /><span className="text-sm text-gray-600">{cab.seats}+1 Passengers</span></div>
-          <div className="flex items-center gap-2"><IndianRupee className="w-4 h-4 text-orange-500" /><span className="text-xl font-bold text-orange-600">{cab.fare.toLocaleString('en-IN')}</span><span className="text-xs text-gray-400">one way</span></div>
+          <div className="flex items-center gap-2"><IndianRupee className="w-4 h-4 text-orange-500" /><span className="text-xl font-bold text-orange-600">{cab.fare.toLocaleString('en-IN')}</span><span className="text-sm text-gray-400">one way</span></div>
           <div className="flex items-center gap-2"><MapPin className="w-4 h-4 text-orange-500" /><span className="text-sm text-gray-600">Upto {cab.distance} km</span></div>
-          <div className="flex items-center gap-2"><Shield className="w-4 h-4 text-orange-400" /><span className="text-xs text-gray-500">Toll: {cab.toll}</span></div>
+          <div className="flex items-center gap-2"><Shield className="w-4 h-4 text-orange-400" /><span className="text-sm text-gray-500">Toll: {cab.toll}</span></div>
         </div>
         <div className="flex gap-2">
           <button className="flex-1 bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2.5 rounded-xl text-sm transition-colors">View Details</button>
@@ -72,16 +72,16 @@ function OutstationCard({ cab, onClick }) {
     <div onClick={() => onClick(cab.id)} className="overflow-hidden transition-all duration-300 bg-white border border-orange-100 shadow-sm cursor-pointer rounded-2xl hover:shadow-md group">
       <div className="relative overflow-hidden h-44">
         <img src={cab.image} alt={cab.name} className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105" />
-        <div className="absolute px-3 py-1 text-xs font-bold text-white bg-orange-500 rounded-full top-3 right-3">{cab.seats}+1 Seater</div>
+        <div className="absolute px-3 py-1 text-sm font-bold text-white bg-orange-500 rounded-full top-3 right-3">{cab.seats}+1 Seater</div>
       </div>
       <div className="p-5">
         <h3 className="mb-1 text-lg font-bold text-gray-900 transition-colors group-hover:text-orange-600">{cab.name}</h3>
-        <p className="mb-3 text-xs text-gray-400">{cab.models}</p>
+        <p className="mb-3 text-sm text-gray-400">{cab.models}</p>
         <div className="mb-4 space-y-2">
           <div className="flex items-center gap-2"><Users className="w-4 h-4 text-orange-500" /><span className="text-sm text-gray-600">{cab.seats}+1 Passengers</span></div>
-          <div className="flex items-center gap-2"><IndianRupee className="w-4 h-4 text-orange-500" /><span className="text-xl font-bold text-orange-600">{cab.farePerKm}.00</span><span className="text-xs text-gray-400">/km</span></div>
+          <div className="flex items-center gap-2"><IndianRupee className="w-4 h-4 text-orange-500" /><span className="text-xl font-bold text-orange-600">{cab.farePerKm}.00</span><span className="text-sm text-gray-400">/km</span></div>
           <div className="flex items-center gap-2"><Clock className="w-4 h-4 text-orange-500" /><span className="text-sm text-gray-600">Driver Bata: &#8377;{cab.driverBata}/day</span></div>
-          <div className="flex items-center gap-2"><MapPin className="w-4 h-4 text-orange-400" /><span className="text-xs text-gray-500">{cab.minKm} Kms min rental/day</span></div>
+          <div className="flex items-center gap-2"><MapPin className="w-4 h-4 text-orange-400" /><span className="text-sm text-gray-500">{cab.minKm} Kms min rental/day</span></div>
         </div>
         <div className="flex gap-2">
           <button className="flex-1 bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2.5 rounded-xl text-sm transition-colors">View Details</button>
@@ -99,16 +99,16 @@ function LocalCard({ cab, onClick }) {
     <div onClick={() => onClick(cab.id)} className="overflow-hidden transition-all duration-300 bg-white border border-orange-100 shadow-sm cursor-pointer rounded-2xl hover:shadow-md group">
       <div className="relative overflow-hidden h-44">
         <img src={cab.image} alt={cab.name} className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105" />
-        <div className="absolute px-3 py-1 text-xs font-bold text-white bg-orange-500 rounded-full top-3 right-3">{cab.seats}+1 Seater</div>
+        <div className="absolute px-3 py-1 text-sm font-bold text-white bg-orange-500 rounded-full top-3 right-3">{cab.seats}+1 Seater</div>
       </div>
       <div className="p-5">
         <h3 className="mb-1 text-lg font-bold text-gray-900 transition-colors group-hover:text-orange-600">{cab.name}</h3>
-        <p className="mb-3 text-xs text-gray-400">{cab.models}</p>
+        <p className="mb-3 text-sm text-gray-400">{cab.models}</p>
         <div className="mb-4 space-y-2">
           <div className="flex items-center gap-2"><Users className="w-4 h-4 text-orange-500" /><span className="text-sm text-gray-600">{cab.seats}+1 Passengers</span></div>
           <div className="flex items-center gap-2"><IndianRupee className="w-4 h-4 text-orange-500" /><span className="text-xl font-bold text-orange-600">&#8377;{cab.fare.toLocaleString('en-IN')}</span></div>
           <div className="flex items-center gap-2"><Clock className="w-4 h-4 text-orange-500" /><span className="text-sm text-gray-600">{cab.hours}Hrs {cab.kms}Kms included</span></div>
-          <div className="pl-6 text-xs text-gray-500">Extra: &#8377;{cab.extraKm}/km &bull; &#8377;{cab.extraHr}/hour</div>
+          <div className="pl-6 text-sm text-gray-500">Extra: &#8377;{cab.extraKm}/km &bull; &#8377;{cab.extraHr}/hour</div>
         </div>
         <div className="flex gap-2">
           <button className="flex-1 bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2.5 rounded-xl text-sm transition-colors">View Details</button>
@@ -129,15 +129,15 @@ function TourCard({ tour, onClick }) {
         <img src={tour.image} alt={tour.title} className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         <div className="absolute flex items-center gap-2 bottom-3 left-4 right-4">
-          <span className="px-3 py-1 text-xs font-bold text-white bg-orange-500 rounded-full">{tour.duration}</span>
-          {tour.distanceKm && <span className="px-2 py-1 text-xs text-white rounded-full bg-black/40 backdrop-blur-sm">{tour.distanceKm}</span>}
+          <span className="px-3 py-1 text-sm font-bold text-white bg-orange-500 rounded-full">{tour.duration}</span>
+          {tour.distanceKm && <span className="px-2 py-1 text-sm text-white rounded-full bg-black/40 backdrop-blur-sm">{tour.distanceKm}</span>}
         </div>
       </div>
       <div className="p-5">
         <h3 className="mb-2 text-lg font-bold text-gray-900 transition-colors group-hover:text-orange-600 line-clamp-2">{tour.title}</h3>
         <div className="flex flex-wrap gap-1 mb-3">
           {tour.highlights.slice(0, 3).map((h, i) => (
-            <span key={i} className="text-xs bg-orange-50 text-orange-700 px-2 py-0.5 rounded-full">{h}</span>
+            <span key={i} className="text-sm bg-orange-50 text-orange-700 px-2 py-0.5 rounded-full">{h}</span>
           ))}
         </div>
         <div className="flex items-center gap-1 mb-4">
@@ -145,7 +145,7 @@ function TourCard({ tour, onClick }) {
             <>
               <span className="text-sm text-gray-500">Starts from</span>
               <span className="text-2xl font-bold text-orange-600">&#8377;{minPrice.toLocaleString('en-IN')}</span>
-              <span className="text-xs text-gray-400">/-</span>
+              <span className="text-sm text-gray-400">/-</span>
             </>
           ) : (
             <span className="text-lg font-semibold text-orange-600">Contact for Price</span>
@@ -195,7 +195,7 @@ function Navbar() {
           <div className="flex items-center justify-center w-10 h-10 bg-orange-500 rounded-xl"><Car className="w-6 h-6 text-white" /></div>
           <div>
             <h1 className="text-lg font-bold leading-tight text-gray-900">{company.name}</h1>
-            <p className="text-xs font-medium text-orange-500">{company.tagline}</p>
+            <p className="text-sm font-medium text-orange-500">{company.tagline}</p>
           </div>
         </div>
         <div className="flex items-center gap-3">
@@ -239,7 +239,7 @@ function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <div className="flex items-center justify-center w-10 h-10 bg-orange-500 rounded-xl"><Car className="w-6 h-6 text-white" /></div>
-              <div><h3 className="text-lg font-bold">{company.name}</h3><p className="text-xs text-orange-400">{company.tagline}</p></div>
+              <div><h3 className="text-lg font-bold">{company.name}</h3><p className="text-sm text-orange-400">{company.tagline}</p></div>
             </div>
             <p className="text-sm text-gray-400">Your trusted cab service partner in Bangalore for airport transfers, outstation trips, local rentals, and tour packages.</p>
           </div>
@@ -255,16 +255,16 @@ function Footer() {
               <div className="flex items-center gap-2 text-sm text-gray-400"><MapPin className="w-4 h-4" />Bangalore, Karnataka</div>
             </div>
             <div className="mt-4">
-              <h5 className="mb-2 text-xs text-gray-500">Payment Methods</h5>
+              <h5 className="mb-2 text-sm text-gray-500">Payment Methods</h5>
               <div className="flex flex-wrap gap-1">
                 {company.paymentMethods.map((m, i) => (
-                  <span key={i} className="px-2 py-1 text-xs text-gray-400 bg-gray-800 rounded">{m}</span>
+                  <span key={i} className="px-2 py-1 text-sm text-gray-400 bg-gray-800 rounded">{m}</span>
                 ))}
               </div>
             </div>
           </div>
         </div>
-        <div className="pt-6 mt-8 text-xs text-center text-gray-500 border-t border-gray-800">&copy; 2025 {company.name}. All rights reserved.</div>
+        <div className="pt-6 mt-8 text-sm text-center text-gray-500 border-t border-gray-800">&copy; 2025 {company.name}. All rights reserved.</div>
       </div>
     </footer>
   );
@@ -280,7 +280,7 @@ function FloatingWhatsApp() {
 }
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState('airport');
+  const [activeTab, setActiveTab] = useState('tour');
   const [tourFilter, setTourFilter] = useState('all');
   const router = useRouter();
 
@@ -343,10 +343,10 @@ export default function App() {
         {/* Tour Category Filters */}
         {activeTab === 'tour' && (
           <div className="flex justify-center mb-6">
-            <div className="flex max-w-full gap-2 pb-2 overflow-x-auto scrollbar-hide">
+            <div className="flex hidden max-w-full gap-2 pb-2">
               {tourCategories.map((cat) => (
                 <button key={cat.id} onClick={() => setTourFilter(cat.id)}
-                  className={`whitespace-nowrap px-4 py-2 rounded-full text-xs font-semibold transition-all ${tourFilter === cat.id ? 'bg-orange-500 text-white shadow-md' : 'bg-orange-50 text-gray-600 hover:bg-orange-100'}`}>
+                  className={`whitespace-nowrap px-4 py-2 rounded-full text-sm font-semibold transition-all ${tourFilter === cat.id ? 'bg-orange-500 text-white shadow-md' : 'bg-orange-50 text-gray-600 hover:bg-orange-100'}`}>
                   {cat.label}
                 </button>
               ))}

@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import { company, tourPackages, tourGlobalIncludes, tourGlobalExcludes, tourGlobalNotes, bookingPolicy, cancellationPolicy } from '@/lib/data';
 import { ChevronLeft, ChevronRight, ArrowLeft, Phone, MessageCircle, MapPin, Clock, IndianRupee, Star, Check, X, Car, Users, Calendar, Route, Info, AlertCircle, CreditCard, Shield } from 'lucide-react';
+import PolicyAccordion from '@/components/ui/TermsConditions';
+import { CardFooter } from '@/components/ui/card';
 
 export default function TourPreview() {
   const { slug } = useParams();
@@ -92,13 +94,13 @@ export default function TourPreview() {
                 <>
                   <p className="mb-1 text-sm text-gray-500">Starts from</p>
                   <p className="text-3xl font-bold text-orange-600">&#8377;{startingPrice.toLocaleString('en-IN')}/-</p>
-                  <p className="mt-1 text-xs text-gray-400">per package</p>
+                  <p className="mt-1 text-sm text-gray-400">per package</p>
                 </>
               ) : (
                 <>
                   <p className="mb-1 text-sm text-gray-500">Pricing</p>
                   <p className="text-xl font-bold text-orange-600">Contact Us</p>
-                  <p className="mt-1 text-xs text-gray-400">for best rates</p>
+                  <p className="mt-1 text-sm text-gray-400">for best rates</p>
                 </>
               )}
             </div>
@@ -121,8 +123,8 @@ export default function TourPreview() {
                 <div className="flex items-center justify-center flex-shrink-0 w-8 h-8 text-sm font-bold text-white bg-orange-500 rounded-lg">{i + 1}</div>
                 <div>
                   <span className="font-medium text-gray-800">{p.name}</span>
-                  {p.description && <p className="text-xs text-gray-500 mt-0.5">{p.description}</p>}
-                  {p.note && <span className="text-xs font-medium text-orange-600">({p.note})</span>}
+                  {p.description && <p className="text-sm text-gray-500 mt-0.5">{p.description}</p>}
+                  {p.note && <span className="text-sm font-medium text-orange-600">({p.note})</span>}
                 </div>
               </div>
             ))}
@@ -137,7 +139,7 @@ export default function TourPreview() {
               {tour.itinerary.map((day, i) => (
                 <div key={i} className="pl-4 border-l-4 border-orange-500">
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="px-3 py-1 text-xs font-bold text-white bg-orange-500 rounded-full">Day {day.day}</span>
+                    <span className="px-3 py-1 text-sm font-bold text-white bg-orange-500 rounded-full">Day {day.day}</span>
                     <h3 className="font-bold text-gray-800">{day.title}</h3>
                   </div>
                   <ul className="space-y-1.5">
@@ -164,14 +166,14 @@ export default function TourPreview() {
                   <div className="flex items-center justify-center w-10 h-10 bg-orange-500 rounded-xl"><Users className="w-5 h-5 text-white" /></div>
                   <div>
                     <h4 className="text-sm font-bold text-gray-800">{v.type}</h4>
-                    <p className="text-xs text-gray-500">{v.models}</p>
+                    <p className="text-sm text-gray-500">{v.models}</p>
                   </div>
                 </div>
                 <div className="text-right">
                   {v.price ? (
                     <>
                       <p className="text-lg font-bold text-orange-600">&#8377;{v.price.toLocaleString('en-IN')}{v.priceMax ? ` - ${v.priceMax.toLocaleString('en-IN')}` : ''}</p>
-                      {v.priceNote && <p className="text-xs text-gray-500">{v.priceNote}</p>}
+                      {v.priceNote && <p className="text-sm text-gray-500">{v.priceNote}</p>}
                     </>
                   ) : (
                     <p className="text-sm font-semibold text-orange-600">{v.priceNote || 'Contact for price'}</p>
@@ -203,7 +205,7 @@ export default function TourPreview() {
         </div>
 
         {/* Booking & Cancellation Policy */}
-        <div className="p-6 mb-6 bg-white rounded-2xl">
+        <div className="hidden p-6 mb-6 bg-white rounded-2xl">
           <button onClick={() => setShowPolicy(!showPolicy)} className="flex items-center justify-between w-full text-left">
             <h2 className="flex items-center gap-2 text-lg font-bold text-gray-900"><Shield className="w-5 h-5 text-orange-500" />Booking & Cancellation Policy</h2>
             <ChevronRight className={`w-5 h-5 text-gray-400 transition-transform ${showPolicy ? 'rotate-90' : ''}`} />
@@ -236,7 +238,7 @@ export default function TourPreview() {
                 <h3 className="mb-2 text-sm font-bold text-gray-800">Payment Methods</h3>
                 <div className="flex flex-wrap gap-2">
                   {company.paymentMethods.map((m, i) => (
-                    <span key={i} className="text-xs bg-orange-50 text-orange-700 px-3 py-1.5 rounded-full font-medium">{m}</span>
+                    <span key={i} className="text-sm bg-orange-50 text-orange-700 px-3 py-1.5 rounded-full font-medium">{m}</span>
                   ))}
                 </div>
               </div>
@@ -245,7 +247,7 @@ export default function TourPreview() {
                 <h3 className="mb-2 text-sm font-bold text-gray-800">Important Notes</h3>
                 <ul className="space-y-1.5">
                   {tourGlobalNotes.map((n, i) => (
-                    <li key={i} className="flex items-start gap-2 text-xs text-gray-500"><AlertCircle className="w-3.5 h-3.5 text-orange-400 flex-shrink-0 mt-0.5" /><span>{n}</span></li>
+                    <li key={i} className="flex items-start gap-2 text-sm text-gray-500"><AlertCircle className="w-3.5 h-3.5 text-orange-400 flex-shrink-0 mt-0.5" /><span>{n}</span></li>
                   ))}
                 </ul>
               </div>
@@ -253,8 +255,10 @@ export default function TourPreview() {
           )}
         </div>
 
+        <PolicyAccordion/>
+
         {/* CTA */}
-        <div className="p-6 mb-8 text-center text-white bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl md:p-8">
+        <div className="p-6 my-8 text-center text-white bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl md:p-8">
           <h3 className="mb-2 text-2xl font-bold">Ready to Book?</h3>
           <p className="mb-6 text-orange-100">Get in touch with us to book this package or customize it according to your needs.</p>
           <div className="flex flex-col justify-center gap-3 sm:flex-row">
@@ -264,10 +268,6 @@ export default function TourPreview() {
         </div>
       </div>
 
-      {/* Footer */}
-      <div className="py-6 text-center bg-gray-900">
-        <p className="text-sm text-gray-500">&copy; 2025 {company.name}. All rights reserved.</p>
-      </div>
 
       {/* Floating WhatsApp */}
       <a href={`https://wa.me/${company.whatsapp}?text=Hi, I want to book ${tour.title}`} target="_blank" rel="noreferrer" className="fixed z-50 p-4 text-white transition-all bg-green-500 rounded-full shadow-2xl bottom-6 right-6 hover:bg-green-600 hover:scale-110">

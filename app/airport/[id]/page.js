@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import { company, airportTaxis, airportPolicy } from '@/lib/data';
 import { ArrowLeft, Phone, MessageCircle, MapPin, Clock, IndianRupee, Users, Shield, Car, AlertCircle, Check, X, CreditCard, Route, Gauge } from 'lucide-react';
+import PolicyAccordion from '@/components/ui/TermsConditions';
 
 export default function AirportDetail() {
   const { id } = useParams();
@@ -69,7 +70,7 @@ export default function AirportDetail() {
             <div className="bg-orange-50 rounded-2xl p-5 text-center flex-shrink-0 min-w-[160px]">
               <p className="mb-1 text-sm text-gray-500">One Way Fare</p>
               <p className="text-3xl font-bold text-orange-600">&#8377;{vehicle.fare.toLocaleString('en-IN')}</p>
-              <p className="mt-1 text-xs text-gray-400">fixed price</p>
+              <p className="mt-1 text-sm text-gray-400">fixed price</p>
             </div>
           </div>
         </div>
@@ -79,19 +80,19 @@ export default function AirportDetail() {
           <h2 className="flex items-center gap-2 mb-4 text-xl font-bold text-gray-900"><IndianRupee className="w-5 h-5 text-orange-500" />Fare Details</h2>
           <div className="space-y-3">
             <div className="flex items-center justify-between p-4 bg-orange-50 rounded-xl">
-              <div className="flex items-center gap-3"><div className="flex items-center justify-center w-10 h-10 bg-orange-500 rounded-xl"><IndianRupee className="w-5 h-5 text-white" /></div><div><h4 className="text-sm font-bold text-gray-800">Base Fare</h4><p className="text-xs text-gray-500">Fixed price for the trip</p></div></div>
+              <div className="flex items-center gap-3"><div className="flex items-center justify-center w-10 h-10 bg-orange-500 rounded-xl"><IndianRupee className="w-5 h-5 text-white" /></div><div><h4 className="text-sm font-bold text-gray-800">Base Fare</h4><p className="text-sm text-gray-500">Fixed price for the trip</p></div></div>
               <p className="text-lg font-bold text-orange-600">&#8377;{vehicle.fare.toLocaleString('en-IN')}</p>
             </div>
             <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
-              <div className="flex items-center gap-3"><div className="flex items-center justify-center w-10 h-10 bg-gray-200 rounded-xl"><Route className="w-5 h-5 text-gray-600" /></div><div><h4 className="text-sm font-bold text-gray-800">Distance Included</h4><p className="text-xs text-gray-500">Maximum distance covered</p></div></div>
+              <div className="flex items-center gap-3"><div className="flex items-center justify-center w-10 h-10 bg-gray-200 rounded-xl"><Route className="w-5 h-5 text-gray-600" /></div><div><h4 className="text-sm font-bold text-gray-800">Distance Included</h4><p className="text-sm text-gray-500">Maximum distance covered</p></div></div>
               <p className="text-lg font-bold text-gray-700">{vehicle.distance} km</p>
             </div>
             <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
-              <div className="flex items-center gap-3"><div className="flex items-center justify-center w-10 h-10 bg-gray-200 rounded-xl"><Shield className="w-5 h-5 text-gray-600" /></div><div><h4 className="text-sm font-bold text-gray-800">Toll Charges</h4><p className="text-xs text-gray-500">Highway toll fees</p></div></div>
+              <div className="flex items-center gap-3"><div className="flex items-center justify-center w-10 h-10 bg-gray-200 rounded-xl"><Shield className="w-5 h-5 text-gray-600" /></div><div><h4 className="text-sm font-bold text-gray-800">Toll Charges</h4><p className="text-sm text-gray-500">Highway toll fees</p></div></div>
               <p className="text-sm font-semibold text-gray-600">{vehicle.toll}</p>
             </div>
             <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
-              <div className="flex items-center gap-3"><div className="flex items-center justify-center w-10 h-10 bg-gray-200 rounded-xl"><Users className="w-5 h-5 text-gray-600" /></div><div><h4 className="text-sm font-bold text-gray-800">Seating Capacity</h4><p className="text-xs text-gray-500">{vehicle.seats} passengers + 1 driver</p></div></div>
+              <div className="flex items-center gap-3"><div className="flex items-center justify-center w-10 h-10 bg-gray-200 rounded-xl"><Users className="w-5 h-5 text-gray-600" /></div><div><h4 className="text-sm font-bold text-gray-800">Seating Capacity</h4><p className="text-sm text-gray-500">{vehicle.seats} passengers + 1 driver</p></div></div>
               <p className="text-lg font-bold text-gray-700">{vehicle.seats}+1</p>
             </div>
           </div>
@@ -116,15 +117,17 @@ export default function AirportDetail() {
           <ul className="space-y-3">
             {airportPolicy.map((item, i) => (
               <li key={i} className="flex items-start gap-3 p-3 bg-orange-50 rounded-xl">
-                <div className="flex items-center justify-center flex-shrink-0 w-6 h-6 text-xs font-bold text-white bg-orange-500 rounded-lg">{i + 1}</div>
+                <div className="flex items-center justify-center flex-shrink-0 w-6 h-6 text-sm font-bold text-white bg-orange-500 rounded-lg">{i + 1}</div>
                 <span className="text-sm text-gray-700">{item}</span>
               </li>
             ))}
           </ul>
         </div>
 
+        <PolicyAccordion/>
+
         {/* Payment Methods */}
-        <div className="p-6 mb-6 bg-white rounded-2xl">
+        <div className="p-6 my-8 bg-white rounded-2xl">
           <h2 className="flex items-center gap-2 mb-3 text-lg font-bold text-gray-900"><CreditCard className="w-5 h-5 text-orange-500" />Payment Methods</h2>
           <div className="flex flex-wrap gap-2">
             {company.paymentMethods.map((m, i) => (
@@ -142,7 +145,7 @@ export default function AirportDetail() {
                 <div key={v.id} onClick={() => { router.push(`/airport/${v.id}`); window.scrollTo(0,0); }} className="p-4 transition-all bg-white border border-orange-100 cursor-pointer md rounded-xl ">
                   <div className="mb-3 overflow-hidden rounded-lg h-28"><img src={v.image} alt={v.name} className="object-cover w-full h-full" /></div>
                   <h3 className="text-sm font-bold text-gray-900">{v.name}</h3>
-                  <p className="text-xs text-gray-500">{v.models} &bull; {v.seats}+1 Seater</p>
+                  <p className="text-sm text-gray-500">{v.models} &bull; {v.seats}+1 Seater</p>
                   <p className="mt-1 text-lg font-bold text-orange-600">&#8377;{v.fare.toLocaleString('en-IN')}</p>
                 </div>
               ))}
@@ -162,7 +165,7 @@ export default function AirportDetail() {
       </div>
 
       <div className="py-6 text-center bg-gray-900"><p className="text-sm text-gray-500">&copy; 2025 {company.name}. All rights reserved.</p></div>
-      <a href={`https://wa.me/${company.whatsapp}?text=Hi, I want to book ${vehicle.name}`} target="_blank" rel="noreferrer" className="fixed z-50 p-4 text-white transition-all bg-green-500 rounded-full shadow-2xl bottom-6 right-6 hover:bg-green-600 hover:scale-110"><MessageCircle className="w-7 h-7" /></a>
+      <a href={`https://wa.me/${company.whatsapp}?text=Booking Request: ${vehicle.name}`} target="_blank" rel="noreferrer" className="fixed z-50 p-4 text-white transition-all bg-green-500 rounded-full shadow-2xl bottom-6 right-6 hover:bg-green-600 hover:scale-110"><MessageCircle className="w-7 h-7" /></a>
     </div>
   );
 }
