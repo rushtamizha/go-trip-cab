@@ -45,7 +45,7 @@ const PolicyAccordion = () => {
   ];
 
   return (
-    <div className="w-full max-w-5xl p-4 m-8 mx-auto space-y-4 bg-white rounded-3xl">
+    <div className="w-full max-w-5xl p-4 m-8 mx-auto space-y-4 font-medium bg-white rounded-3xl">
       {sections.map((section) => {
         const isOpen = openSection === section.id;
         
@@ -68,7 +68,7 @@ const PolicyAccordion = () => {
                   {section.icon}
                 </div>
                 <div>
-                  <span className={`font-medium  text-sm ${isOpen ? 'text-slate-900' : 'text-slate-600'}`}>
+                  <span className={`font-medium  ${isOpen ? 'text-slate-900' : 'text-slate-800'}`}>
                     {section.title}
                   </span>
                   <p className="text-[10px] font-bold text-slate-600  tracking-widest mt-0.5">

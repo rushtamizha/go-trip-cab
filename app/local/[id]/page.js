@@ -5,6 +5,7 @@ import { company, localTaxis, localNotes } from '@/lib/data';
 import { ArrowLeft, Phone, MessageCircle, MapPin, Clock, IndianRupee, Users, Shield, Car, AlertCircle, Check, X, CreditCard, Route, Gauge } from 'lucide-react';
 import PolicyAccordion from '@/components/ui/TermsConditions';
 import BookingForm from '@/components/ui/BookingForm';
+import PolicyToggle from '@/components/InclusionExclusion';
 
 export default function LocalDetail() {
   const { id } = useParams();
@@ -98,7 +99,7 @@ export default function LocalDetail() {
             </div>
           </div>
           {/* Extra usage examples */}
-          <div className="p-4 mt-4 border border-blue-200 bg-blue-50 rounded-xl">
+          <div className="hidden p-4 mt-4 border border-blue-200 bg-blue-50 rounded-xl">
             <h4 className="mb-2 text-sm font-bold text-blue-800">Example: 6 Hours / 60 Kms Usage</h4>
             <div className="space-y-1 text-sm text-blue-700">
               <p>Base Package: &#8377;{vehicle.fare.toLocaleString('en-IN')} ({vehicle.hours}Hrs/{vehicle.kms}Kms)</p>
@@ -110,24 +111,7 @@ export default function LocalDetail() {
         </div>
 
         {/* Includes & Excludes */}
-        <div className="grid grid-cols-1 gap-6 mb-6 md:grid-cols-2">
-          <div className="p-6 bg-white rounded-2xl">
-            <h2 className="flex items-center gap-2 mb-3 text-lg font-bold text-gray-900"><Check className="w-5 h-5 text-green-600" />Includes</h2>
-            <div className="space-y-2">
-              <div className="flex items-start gap-2"><Check className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" /><span className="text-sm text-gray-700">Driver Bata (Allowance)</span></div>
-              <div className="flex items-start gap-2"><Check className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" /><span className="text-sm text-gray-700">Fuel Charges</span></div>
-              <div className="flex items-start gap-2"><Check className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" /><span className="text-sm text-gray-700">{vehicle.hours} Hours & {vehicle.kms} Kms usage</span></div>
-            </div>
-          </div>
-          <div className="p-6 bg-white rounded-2xl">
-            <h2 className="flex items-center gap-2 mb-3 text-lg font-bold text-gray-900"><X className="w-5 h-5 text-red-500" />Excludes</h2>
-            <div className="space-y-2">
-              <div className="flex items-start gap-2"><X className="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" /><span className="text-sm text-gray-700">Toll Charges</span></div>
-              <div className="flex items-start gap-2"><X className="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" /><span className="text-sm text-gray-700">Parking Fees</span></div>
-              <div className="flex items-start gap-2"><X className="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" /><span className="text-sm text-gray-700">Extra km/hour charges</span></div>
-            </div>
-          </div>
-        </div>
+        <PolicyToggle/>
 
         {/* Notes */}
         <div className="hidden p-6 mb-6 bg-white rounded-2xl">
@@ -176,9 +160,6 @@ export default function LocalDetail() {
           </div>
         </div>
       </div>
-
-      <div className="py-6 text-center bg-gray-900"><p className="text-sm text-gray-500">&copy; 2025 {company.name}. All rights reserved.</p></div>
-      <a href={`https://wa.me/${company.whatsapp}?text=Booking Request: ${vehicle.name}`} target="_blank" rel="noreferrer" className="fixed z-50 p-4 text-white transition-all bg-green-500 rounded-full shadow-2xl bottom-6 right-6 hover:bg-green-600 hover:scale-110"><MessageCircle className="w-7 h-7" /></a>
     </div>
   );
 }

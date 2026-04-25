@@ -345,13 +345,13 @@ export default function TourPreview() {
                           )}
                         </p>
                         {v.priceNote && (
-                          <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mt-1">
+                          <p className="text-[10px] font-medium text-slate-400 uppercase tracking-widest mt-1">
                             {v.priceNote}
                           </p>
                         )}
                       </>
                     ) : (
-                      <p className="text-xs font-black tracking-widest text-orange-600 uppercase">
+                      <p className="text-xs font-medium tracking-widest text-orange-600 uppercase">
                         {v.priceNote || "Price on Request"}
                       </p>
                     )}

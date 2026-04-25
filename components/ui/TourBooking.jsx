@@ -48,7 +48,7 @@ export default function TourBookingForm({ packageName = "General Inquiry" }) {
     "flex items-center gap-2 mb-2 text-sm text-gray-700 font-bold tracking-tight";
 
   return (
-    <div className="w-full max-w-5xl mx-auto bg-white rounded-[2.5rem] border border-slate-100  p-6 md:p-10 my-6">
+    <div className="w-full max-w-5xl mx-auto bg-white rounded-[2.5rem]   p-6 md:p-10 my-6">
       {/* Header */}
       <div className="flex items-start justify-between mb-8">
         <div>
@@ -130,9 +130,9 @@ export default function TourBookingForm({ packageName = "General Inquiry" }) {
       {/* Action Button */}
       <button
         onClick={handleWhatsApp}
-        className="w-full mt-10 h-16 rounded-xl bg-orange-500  text-white font-bold text-sm tracking-[0.2em] transition-all active:scale-[0.98] flex items-center justify-center gap-3 group"
+        className="w-full mt-10 h-16 rounded-xl bg-orange-500  text-white font-bold   transition-all active:scale-[0.98] flex items-center justify-center gap-3 group"
       >
-        <span>CHECK AVAILABILITY</span>
+        <span>Check Availability</span>
       </button>
     </div>
   );

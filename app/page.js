@@ -34,6 +34,12 @@ import {
   tourCategories,
   getTourMinPrice,
 } from "@/lib/data";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import DestinationsGallery from "@/components/Gallery";
+import Testimonials from "@/components/Testimonials";
+import WhyChooseUs from "@/components/WhyChoose";
+import FAQ from "@/components/Faq";
 
 const TABS = [
   { id: "tour", label: "Tour Packages", icon: Map },
@@ -424,46 +430,8 @@ function Features() {
   );
 }
 
-// Navbar
-function Navbar() {
-  return (
-    <nav className="sticky top-0 z-50 bg-white border-b border-orange-100 shadow-sm">
-      <div className="flex items-center justify-between px-4 py-3 mx-auto max-w-7xl">
-        <div className="flex items-center gap-2">
-          <div className="flex items-center justify-center w-10 h-10 bg-orange-500 rounded-xl">
-            <Car className="w-6 h-6 text-white" />
-          </div>
-          <div>
-            <h1 className="text-lg font-bold leading-tight text-gray-900">
-              {company.name}
-            </h1>
-            <p className="text-sm font-medium text-orange-500">
-              {company.tagline}
-            </p>
-          </div>
-        </div>
-        <div className="flex items-center gap-3">
-          <a
-            href={`tel:${company.phone}`}
-            className="items-center hidden gap-2 px-4 py-2 text-sm font-medium text-orange-600 transition-colors md:flex bg-orange-50 hover:bg-orange-100 rounded-xl"
-          >
-            <Phone className="w-4 h-4" />
-            {company.phoneDisplay}
-          </a>
-          <a
-            href={`https://wa.me/${company.whatsapp}`}
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white transition-colors bg-green-500 hover:bg-green-600 rounded-xl"
-          >
-            <MessageCircle className="w-4 h-4" />
-            <span className="hidden md:inline">WhatsApp</span>
-          </a>
-        </div>
-      </div>
-    </nav>
-  );
-}
+
+
 
 // Policy Section
 function PolicySection({ title, items }) {
@@ -499,94 +467,6 @@ function PolicySection({ title, items }) {
   );
 }
 
-// Footer
-function Footer() {
-  return (
-    <footer className="py-10 text-white bg-gray-900">
-      <div className="px-4 mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-          <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="flex items-center justify-center w-10 h-10 bg-orange-500 rounded-xl">
-                <Car className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <h3 className="text-lg font-bold">{company.name}</h3>
-                <p className="text-sm text-orange-400">{company.tagline}</p>
-              </div>
-            </div>
-            <p className="text-sm text-gray-400">
-              Your trusted cab service partner in Bangalore for airport
-              transfers, outstation trips, local rentals, and tour packages.
-            </p>
-          </div>
-          <div>
-            <h4 className="mb-4 font-bold text-orange-400">Services</h4>
-            <ul className="space-y-2 text-sm text-gray-400">
-              <li>Airport Taxi</li>
-              <li>Outstation Cabs</li>
-              <li>Local Taxi Rental</li>
-              <li>Tour Packages</li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="mb-4 font-bold text-orange-400">Contact Us</h4>
-            <div className="space-y-3">
-              <a
-                href={`tel:${company.phone}`}
-                className="flex items-center gap-2 text-sm text-gray-400 transition-colors hover:text-orange-400"
-              >
-                <Phone className="w-4 h-4" />
-                {company.phoneDisplay}
-              </a>
-              <a
-                href={`https://wa.me/${company.whatsapp}`}
-                className="flex items-center gap-2 text-sm text-gray-400 transition-colors hover:text-green-400"
-              >
-                <MessageCircle className="w-4 h-4" />
-                WhatsApp Us
-              </a>
-              <div className="flex items-center gap-2 text-sm text-gray-400">
-                <MapPin className="w-4 h-4" />
-                Bangalore, Karnataka
-              </div>
-            </div>
-            <div className="mt-4">
-              <h5 className="mb-2 text-sm text-gray-500">Payment Methods</h5>
-              <div className="flex flex-wrap gap-1">
-                {company.paymentMethods.map((m, i) => (
-                  <span
-                    key={i}
-                    className="px-2 py-1 text-sm text-gray-400 bg-gray-800 rounded"
-                  >
-                    {m}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="pt-6 mt-8 text-sm text-center text-gray-500 border-t border-gray-800">
-          &copy; 2025 {company.name}. All rights reserved.
-        </div>
-      </div>
-    </footer>
-  );
-}
-
-// Floating WhatsApp Button
-function FloatingWhatsApp() {
-  return (
-    <a
-      href={`https://wa.me/${company.whatsapp}?text=Hi, I want to book a cab from Bangalore`}
-      target="_blank"
-      rel="noreferrer"
-      className="fixed z-50 p-4 text-white transition-all bg-green-500 rounded-full shadow-2xl bottom-6 right-6 hover:bg-green-600 hover:scale-110"
-    >
-      <MessageCircle className="w-7 h-7" />
-    </a>
-  );
-}
 
 export default function App() {
   const [activeTab, setActiveTab] = useState("tour");
@@ -788,8 +668,6 @@ export default function App() {
           />
         )}
       </div>
-      <Footer />
-      <FloatingWhatsApp />
 
 
       <style jsx>{`
@@ -813,6 +691,10 @@ export default function App() {
       }
     `}</style>
     
+    <DestinationsGallery/>
+    <WhyChooseUs/>
+    <Testimonials/>
+    <FAQ/>
     </div>
   );
 }
