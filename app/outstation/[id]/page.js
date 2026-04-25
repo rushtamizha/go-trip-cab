@@ -21,6 +21,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import PolicyAccordion from "@/components/ui/TermsConditions";
+import BookingForm from "@/components/ui/BookingForm";
 
 export default function OutstationDetail() {
   const { id } = useParams();
@@ -237,7 +238,7 @@ export default function OutstationDetail() {
         </div>
 
         {/* Terms & Conditions */}
-        <div className="p-6 mb-6 bg-white rounded-2xl">
+        <div className="hidden p-6 mb-6 bg-white rounded-2xl">
           <h2 className="flex items-center gap-2 mb-4 text-xl font-bold text-gray-900">
             <AlertCircle className="w-5 h-5 text-orange-500" />
             Terms & Conditions
@@ -320,7 +321,7 @@ export default function OutstationDetail() {
             </div>
           </div>
         </div>
-
+         <BookingForm carType={vehicle.name} tripType={"Outstation Cab Package"}/>
         <PolicyAccordion/>
 
         {/* Payment */}
@@ -378,7 +379,7 @@ export default function OutstationDetail() {
         )}
 
         {/* CTA */}
-        <div className="p-6 mb-8 text-center text-white  bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl md:p-8">
+        <div className="p-6 mb-8 text-center text-white bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl md:p-8">
           <h3 className="mb-2 text-2xl font-bold">Book {vehicle.name}</h3>
           <p className="mb-6 text-orange-100">
             Plan your outstation trip with comfort and reliability

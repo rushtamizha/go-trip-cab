@@ -4,6 +4,7 @@ import { useRouter, useParams } from 'next/navigation';
 import { company, airportTaxis, airportPolicy } from '@/lib/data';
 import { ArrowLeft, Phone, MessageCircle, MapPin, Clock, IndianRupee, Users, Shield, Car, AlertCircle, Check, X, CreditCard, Route, Gauge } from 'lucide-react';
 import PolicyAccordion from '@/components/ui/TermsConditions';
+import BookingForm from '@/components/ui/BookingForm';
 
 export default function AirportDetail() {
   const { id } = useParams();
@@ -110,9 +111,9 @@ export default function AirportDetail() {
             <div className="p-4 text-center bg-green-50 rounded-xl"><Check className="w-6 h-6 mx-auto mb-2 text-green-600" /><p className="text-sm font-medium text-gray-700">24/7 Available</p></div>
           </div>
         </div>
-
+        <BookingForm carType={vehicle.name} tripType={"Airport Cab Package"}/>
         {/* Policy */}
-        <div className="p-6 mb-6 bg-white rounded-2xl">
+        <div className="hidden p-6 mb-6 bg-white rounded-2xl">
           <h2 className="flex items-center gap-2 mb-4 text-xl font-bold text-gray-900"><AlertCircle className="w-5 h-5 text-orange-500" />Airport Taxi Policy</h2>
           <ul className="space-y-3">
             {airportPolicy.map((item, i) => (

@@ -680,12 +680,10 @@ export default function App() {
             }
           `}
                 >
-                  {/* Icon stays centered and fixed size */}
                   <Icon
                     className={`w-4 h-4 shrink-0 transition-transform duration-300 ${isActive ? "scale-110" : "scale-100"}`}
                   />
 
-                  {/* Label: Controlled by width and opacity for a smooth slide effect */}
                   <div
                     className={`
               overflow-hidden transition-all duration-500 ease-in-out font-black uppercase tracking-tighter
@@ -701,6 +699,7 @@ export default function App() {
             })}
           </div>
         </div>
+
 
         <div className="mb-6 text-center">
           <h2 className="mb-2 text-2xl font-bold text-gray-900 md:text-3xl">

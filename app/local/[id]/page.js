@@ -4,6 +4,7 @@ import { useRouter, useParams } from 'next/navigation';
 import { company, localTaxis, localNotes } from '@/lib/data';
 import { ArrowLeft, Phone, MessageCircle, MapPin, Clock, IndianRupee, Users, Shield, Car, AlertCircle, Check, X, CreditCard, Route, Gauge } from 'lucide-react';
 import PolicyAccordion from '@/components/ui/TermsConditions';
+import BookingForm from '@/components/ui/BookingForm';
 
 export default function LocalDetail() {
   const { id } = useParams();
@@ -129,7 +130,7 @@ export default function LocalDetail() {
         </div>
 
         {/* Notes */}
-        <div className="p-6 mb-6 bg-white rounded-2xl">
+        <div className="hidden p-6 mb-6 bg-white rounded-2xl">
           <h2 className="flex items-center gap-2 mb-4 text-xl font-bold text-gray-900"><AlertCircle className="w-5 h-5 text-orange-500" />Important Notes</h2>
           <ul className="space-y-3">
             {localNotes.map((item, i) => (
@@ -140,8 +141,8 @@ export default function LocalDetail() {
             ))}
           </ul>
         </div>
-        <PolicyAccordion/>
-
+         <BookingForm carType={vehicle.name} tripType={"Local Cab Package"}/>
+         <PolicyAccordion/>
         {/* Payment */}
         <div className="p-6 my-6 bg-white rounded-2xl">
           <h2 className="flex items-center gap-2 mb-3 text-lg font-bold text-gray-900"><CreditCard className="w-5 h-5 text-orange-500" />Payment Methods</h2>
