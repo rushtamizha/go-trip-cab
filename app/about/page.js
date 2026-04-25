@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Users, Globe2, ShieldCheck, Map, ArrowRight } from "lucide-react";
 import { company } from "@/lib/data";
+import BackButton from "@/components/Back";
 
 const stats = [
   { label: "Happy Travelers", value: "10K+", icon: <Users size={16} /> },
@@ -14,8 +15,9 @@ const stats = [
 
 const AboutPage = () => {
   return (
-    <main className="pt-20 bg-white">
+    <main className="bg-white ">
       {/* 1. Brand Story Section (Split Layout) */}
+      <BackButton/>
       <section className="px-6 py-20">
         <div className="mx-auto max-w-7xl">
           <div className="grid items-center grid-cols-1 gap-16 lg:grid-cols-2">
@@ -29,7 +31,7 @@ const AboutPage = () => {
                   <span className="text-orange-600">Travel Experience</span>
                 </h1>
                 <p className="max-w-lg text-sm leading-relaxed text-slate-500">
-                  Founded with a vision to bridge the gap between luxury and affordability, Go Pravasa has evolved into a premier travel agency. We don't just book trips; we craft narratives that stay with you forever.
+                  Founded with a vision to bridge the gap between luxury and affordability, go trip cabs has evolved into a premier travel agency. We don't just book trips; we craft narratives that stay with you forever.
                 </p>
               </div>
 
@@ -49,7 +51,7 @@ const AboutPage = () => {
                 <img 
                   src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&q=80" 
                   className="object-cover w-full h-full"
-                  alt="About Go Pravasa"
+                  alt="About go trip cabs"
                 />
               </div>
               {/* Floating Badge */}

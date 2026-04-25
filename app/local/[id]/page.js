@@ -150,15 +150,7 @@ export default function LocalDetail() {
           </div>
         )}
 
-        {/* CTA */}
-        <div className="p-6 mb-8 text-center text-white bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl md:p-8">
-          <h3 className="mb-2 text-2xl font-bold">Book {vehicle.name}</h3>
-          <p className="mb-6 text-orange-100">Explore Bangalore city with comfort</p>
-          <div className="flex flex-col justify-center gap-3 sm:flex-row">
-            <a href={`tel:${company.phone}`} className="inline-flex items-center justify-center gap-2 px-8 py-3 font-bold text-orange-600 transition-colors bg-white rounded-xl hover:bg-orange-50"><Phone className="w-5 h-5" />Call {company.phoneDisplay}</a>
-            <a href={`https://wa.me/${company.whatsapp}?text=Booking Request: ${vehicle.name}`} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-8 py-3 font-bold text-white transition-colors bg-green-500 rounded-xl hover:bg-green-600"><MessageCircle className="w-5 h-5" />WhatsApp</a>
-          </div>
-        </div>
+
       </div>
     </div>
   );

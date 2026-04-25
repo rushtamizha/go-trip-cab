@@ -110,26 +110,13 @@ const ContactPage = () => {
                 </div>
                 <div>
                   <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Head Office</p>
-                  <p className="text-sm font-black leading-tight text-slate-900">Theni, Tamil Nadu, India</p>
+                  <p className="text-sm font-black leading-relaxed text-slate-900">
+                  #20, Sarjapur Main Rd, Maruthi Nagar,
+                  <br /> Kaikondrahalli, Bangalore – 560035
+                </p>
                 </div>
               </div>
             </div>
-
-            {/* Support Status Card */}
-            <div className="p-8 bg-slate-900 rounded-[2.5rem] text-white">
-               <div className="flex items-center gap-3 mb-6">
-                  <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                  <span className="text-[10px] font-black uppercase tracking-widest text-emerald-500">Live Status: Online</span>
-               </div>
-               <h4 className="mb-2 text-lg font-black tracking-tighter uppercase">24/7 Emergency Support</h4>
-               <p className="text-[11px] text-slate-400 font-medium leading-relaxed mb-6">
-                 Our booking systems and travel alerts are monitored round-the-clock for your safety.
-               </p>
-               <button className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-orange-500 hover:text-white transition-colors">
-                 WhatsApp Support <MessageSquare size={14} />
-               </button>
-            </div>
-
           </div>
         </div>
       </div>

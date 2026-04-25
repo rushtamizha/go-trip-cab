@@ -1,5 +1,6 @@
 import Footer from '@/components/Footer'
 import './globals.css'
+import ContactButton from '@/components/ContactBtn'
 
 export const metadata = {
   title: 'Go Trip Cabs - Airport Taxi, Outstation Cabs, Local Rental & Tour Packages in Bangalore',
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
       <body className="min-h-screen bg-white">
         {children}
         <Footer/>
+        <ContactButton/>
       </body>
     </html>
   )

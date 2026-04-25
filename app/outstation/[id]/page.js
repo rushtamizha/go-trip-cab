@@ -277,49 +277,7 @@ export default function OutstationDetail() {
           </div>
         )}
 
-        {/* CTA */}
-        <div className="p-6 mb-8 text-center text-white bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl md:p-8">
-          <h3 className="mb-2 text-2xl font-bold">Book {vehicle.name}</h3>
-          <p className="mb-6 text-orange-100">
-            Plan your outstation trip with comfort and reliability
-          </p>
-          <div className="flex flex-col justify-center gap-3 sm:flex-row">
-            <a
-              href={`tel:${company.phone}`}
-              className="inline-flex items-center justify-center gap-2 px-8 py-3 font-bold text-orange-600 transition-colors bg-white rounded-xl hover:bg-orange-50"
-            >
-              <Phone className="w-5 h-5" />
-              Call {company.phoneDisplay}
-            </a>
-            <a
-              href={`https://wa.me/${company.whatsapp}?text=Hi, I want to book ${vehicle.name} for outstation trip`}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3 font-bold text-white transition-colors bg-green-500 rounded-xl hover:bg-green-600"
-            >
-              <MessageCircle className="w-5 h-5" />
-              WhatsApp
-            </a>
-          </div>
-        </div>
-
-        
-        
       </div>
-
-      <div className="py-6 text-center bg-gray-900">
-        <p className="text-sm text-gray-500">
-          &copy; 2025 {company.name}. All rights reserved.
-        </p>
-      </div>
-      <a
-        href={`https://wa.me/${company.whatsapp}?text=Booking Request: ${vehicle.name}`}
-        target="_blank"
-        rel="noreferrer"
-        className="fixed z-50 p-4 text-white transition-all bg-green-500 rounded-full shadow-2xl bottom-6 right-6 hover:bg-green-600 hover:scale-110"
-      >
-        <MessageCircle className="w-7 h-7" />
-      </a>
     </div>
   );
 }

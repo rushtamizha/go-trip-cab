@@ -14,13 +14,39 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-[100] bg-white border-b border-slate-100 py-3">
       <div className="flex items-center justify-between px-4 mx-auto max-w-7xl">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
-          <div className="flex items-center justify-center w-8 h-8 italic font-bold text-white rounded-lg bg-slate-900">
-            W
+        <Link href="/" className="flex items-center gap-3 group">
+          {/* Logo Container */}
+          <div className="relative flex items-center justify-center overflow-hidden transition-transform h-11 w-11 rounded-xl bg-slate-900 group-hover:scale-105">
+            <img
+              src="/logo.jpg"
+              alt={`${company.name} Logo`}
+              className="object-cover w-full h-full"
+            />
+            {/* Subtle Inner Border for Premium Feel */}
+            <div className="absolute inset-0 border rounded-xl border-white/10" />
           </div>
-          <span className="text-sm font-black tracking-tight uppercase text-slate-900">
-            {company.name}
-          </span>
+
+          {/* Brand Text */}
+          <div className="flex flex-col justify-center">
+            <h1 className="text-base font-black leading-none tracking-tighter uppercase text-slate-900">
+              {company.name}
+            </h1>
+
+            {/* Micro-Typography Slogan */}
+            <div className="mt-1 flex items-center gap-1.5">
+              <span className="text-[8px] font-black uppercase tracking-[0.25em] text-orange-500">
+                Drive
+              </span>
+              <span className="w-1 h-1 rounded-full bg-slate-200" />
+              <span className="text-[8px] font-black uppercase tracking-[0.25em] text-orange-500">
+                Discover
+              </span>
+              <span className="w-1 h-1 rounded-full bg-slate-200" />
+              <span className="text-[8px] font-black uppercase tracking-[0.25em] text-orange-500">
+                Explore
+              </span>
+            </div>
+          </div>
         </Link>
 
         {/* Desktop Navigation */}

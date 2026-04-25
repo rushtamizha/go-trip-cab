@@ -2,95 +2,84 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { ShieldCheck, Zap, Clock, Banknote, CheckCircle2 } from "lucide-react";
+import { Car, MapPin, CheckCircle, PartyPopper, ChevronRight } from "lucide-react";
 
-const features = [
+const steps = [
   {
-    title: "Affordable Pricing",
-    description: "Enjoy top-tier travel experiences at unbeatable prices without compromising on quality.",
-    icon: <Banknote className="text-orange-600" size={24} />,
+    title: "Choose Your Taxi",
+    desc: "Select from our premium fleet of Sedans, SUVs, or Luxury cars.",
+    icon: <Car size={24} />,
   },
   {
-    title: "High Security",
-    description: "Travel with confidence knowing that your safety and privacy are our top priorities.",
-    icon: <ShieldCheck className="text-orange-600" size={24} />,
+    title: "Select Location",
+    desc: "Enter your pickup and destination details for an instant quote.",
+    icon: <MapPin size={24} />,
   },
   {
-    title: "Fast Booking",
-    description: "Book your next adventure quickly and effortlessly with our seamless platform.",
-    icon: <Zap className="text-orange-600" size={24} />,
+    title: "Confirm Booking",
+    desc: "Secure your ride with a quick advance payment and instant confirmation.",
+    icon: <CheckCircle size={24} />,
   },
   {
-    title: "24 Hours Support",
-    description: "Stay informed and secure with round-the-clock assistance and real-time updates.",
-    icon: <Clock className="text-orange-600" size={24} />,
+    title: "Enjoy Your Trip",
+    desc: "Sit back and relax while our professional drivers take the wheel.",
+    icon: <PartyPopper size={24} />,
   },
 ];
 
-const WhyChooseUs = () => {
+const BookingProcess = () => {
   return (
-    <section className="px-6 bg-white py-14">
+    <section className="px-6 py-24 bg-slate-50/50">
       <div className="mx-auto max-w-7xl">
-        <div className="grid items-center grid-cols-1 gap-16 lg:grid-cols-12">
-          
-          {/* Left Side: Content */}
-          <div className="space-y-6 lg:col-span-5">
-            <div className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-orange-600" />
-              <span className="text-[10px] font-black text-orange-600 uppercase tracking-[0.3em]">
-                The Go Trip Cab
-              </span>
-            </div>
-            
-            <h2 className="text-2xl font-bold md:text-2xl text-slate-900 ">
-              Committed to <br /> Stress-Free Travel
-            </h2>
-            
-            <p className="max-w-md text-sm leading-relaxed text-slate-500">
-              We focus on comfort, safety, and convenience to ensure your journey is as memorable as the destination.
-            </p>
-
-            {/* Desktop Only: Trust Indicators */}
-            <div className="flex-col hidden gap-3 pt-4 md:flex">
-              {["Government Approved", "Secure Payments", "Verified Drivers"].map((item) => (
-                <div key={item} className="flex items-center gap-2 text-[11px] font-bold text-slate-400 uppercase tracking-widest">
-                  <CheckCircle2 size={14} className="text-emerald-500" />
-                  {item}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Right Side: Feature Grid (Responsive) */}
-          <div className="lg:col-span-7">
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6">
-              {features.map((feature, index) => (
-                <motion.div
-                  key={index}
-                  className="p-8 bg-slate-50 border border-slate-100 rounded-[2rem] hover:bg-white   transition-all group"
-                >
-                  <div className="flex items-center justify-center w-12 h-12 mb-6 transition-colors bg-white shadow-sm rounded-2xl group-hover:bg-orange-600 group-hover:text-white">
-                    {React.cloneElement(feature.icon, { 
-                      className: "group-hover:text-white transition-colors" 
-                    })}
-                  </div>
-                  
-                  <h3 className="mb-3 text-sm font-black tracking-tight uppercase text-slate-900">
-                    {feature.title}
-                  </h3>
-                  
-                  <p className="text-[13px] font-medium leading-relaxed text-slate-500 group-hover:text-slate-600 transition-colors">
-                    {feature.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
+        
+        {/* Header */}
+        <div className="mb-16 text-center">
+          <span className="text-[10px] font-black text-orange-600 uppercase tracking-[0.4em] block mb-4">
+            Simple & Seamless
+          </span>
+          <h2 className="text-3xl font-black tracking-tighter uppercase md:text-4xl text-slate-900">
+            How to <span className="text-orange-600">Book Your Ride</span>
+          </h2>
         </div>
+
+        {/* Steps Grid */}
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {steps.map((step, index) => (
+            <div key={index} className="relative group">
+              <motion.div 
+                whileHover={{ y: -5 }}
+                className="h-full p-8 bg-white border border-slate-100 rounded-[2.5rem] shadow-sm  hover:shadow-slate-200/50 transition-all flex flex-col items-center text-center"
+              >
+                {/* Icon Wrapper */}
+                <div className="w-16 h-16 rounded-[1.5rem] bg-orange-500 text-white flex items-center justify-center mb-6 group-hover:bg-orange-600 transition-colors shadow-lg shadow-slate-900/10">
+                  {step.icon}
+                </div>
+
+                {/* Step Number */}
+                <span className="text-[9px] font-black text-orange-600 uppercase tracking-[0.2em] mb-2">
+                  Step 0{index + 1}
+                </span>
+
+                <h3 className="mb-3 text-sm font-black tracking-tight uppercase text-slate-900">
+                  {step.title}
+                </h3>
+
+                <p className="text-[12px] font-medium leading-relaxed text-slate-500">
+                  {step.desc}
+                </p>
+              </motion.div>
+            </div>
+          ))}
+        </div>
+
+        {/* Mobile Swipe Hint */}
+        <p className="mt-8 text-center md:hidden text-[9px] font-bold text-slate-400 uppercase tracking-widest">
+          Follow the steps for a hassle-free journey
+        </p>
+
       </div>
     </section>
   );
 };
 
-export default WhyChooseUs;
+export default BookingProcess;

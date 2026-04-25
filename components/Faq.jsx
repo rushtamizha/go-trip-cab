@@ -6,7 +6,7 @@ import { Plus, Minus, HelpCircle } from "lucide-react";
 
 const faqs = [
   {
-    question: "How do I book a tour package with Go Pravasa?",
+    question: "How do I book a tour package with go trip cabs?",
     answer: "Booking is simple. You can browse our Destinations gallery, select your preferred package, and click 'Book Now'. Alternatively, you can call our 24/7 support line for instant assistance with customized itineraries."
   },
   {
@@ -14,15 +14,11 @@ const faqs = [
     answer: "Cancellations made 15 days prior to the trip are eligible for a full refund. For cancellations within 7-14 days, a 50% refund is applicable. Please refer to our Refund Policy page for specific details regarding peak season bookings."
   },
   {
-    question: "Are the tour prices inclusive of flight tickets?",
-    answer: "Our standard packages typically cover local transportation, accommodation, and sightseeing. Flight bookings can be added as an optional service based on your city of departure."
-  },
-  {
     question: "Do you provide customized travel packages?",
     answer: "Yes, we specialize in 'Enterprise-Grade' customization. Whether it's a corporate retreat, a family trip, or a solo adventure, we can tailor the hotels and activities to fit your specific budget and preferences."
   },
   {
-    question: "Is it safe to travel with Go Pravasa during off-seasons?",
+    question: "Is it safe to travel with go trip cabs during off-seasons?",
     answer: "Your safety is our priority. We monitor real-time weather and travel alerts 24/7. If a destination is deemed unsafe due to weather or other factors, we provide immediate alternatives or rescheduling options."
   }
 ];

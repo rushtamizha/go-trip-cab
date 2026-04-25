@@ -374,6 +374,15 @@ export default function TourPreview() {
         <InclusionExclusion />
         <TourBookingForm packageName={tour.title} />
         <PolicyAccordion />
+        
+        <div className="p-6 my-8 bg-white rounded-2xl">
+          <h2 className="flex items-center gap-2 mb-3 text-lg font-bold text-gray-900"><CreditCard className="w-5 h-5 text-orange-500" />Payment Methods</h2>
+          <div className="flex flex-wrap gap-2">
+            {company.paymentMethods.map((m, i) => (
+              <span key={i} className="px-4 py-2 text-sm font-medium text-orange-700 rounded-full bg-orange-50">{m}</span>
+            ))}
+          </div>
+        </div>
 
         {/* CTA */}
         <div className="hidden p-6 my-8 text-center text-white bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl md:p-8">
@@ -402,16 +411,7 @@ export default function TourPreview() {
           </div>
         </div>
       </div>
-
-      {/* Floating WhatsApp */}
-      <a
-        href={`https://wa.me/${company.whatsapp}?text=Hi, I want to book ${tour.title}`}
-        target="_blank"
-        rel="noreferrer"
-        className="fixed z-50 p-4 text-white transition-all bg-green-500 rounded-full shadow-2xl bottom-6 right-6 hover:bg-green-600 hover:scale-110"
-      >
-        <MessageCircle className="w-7 h-7" />
-      </a>
+      
     </div>
   );
 }
