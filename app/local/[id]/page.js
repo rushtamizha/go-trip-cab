@@ -99,7 +99,7 @@ export default function LocalDetail() {
             </div>
           </div>
           {/* Extra usage examples */}
-          <div className="hidden p-4 mt-4 border border-blue-200 bg-blue-50 rounded-xl">
+          <div className="p-4 mt-4 border border-blue-200  bg-blue-50 rounded-xl">
             <h4 className="mb-2 text-sm font-bold text-blue-800">Example: 6 Hours / 60 Kms Usage</h4>
             <div className="space-y-1 text-sm text-blue-700">
               <p>Base Package: &#8377;{vehicle.fare.toLocaleString('en-IN')} ({vehicle.hours}Hrs/{vehicle.kms}Kms)</p>
