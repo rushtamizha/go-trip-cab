@@ -13,31 +13,107 @@ import "swiper/css/navigation";
 const testimonials = [
   {
     id: 1,
-    name: "Arun Kumar",
-    role: "Family Traveler",
-    content: "The attention to detail for our Andaman trip was exceptional. From the airport pickup to the resort bookings, everything was handled with professional precision.",
-    location: "Chennai",
+    name: "Varshitha R Varshitha",
+    role: "Local Traveler",
+    text: "That experience was really good, the vehicle was very clean and comfortable. One of the best travel experiences—safe, calm driving that makes you feel at ease in busy environments.",
+    rating: 5,
+    image: "https://randomuser.me/api/portraits/women/1.jpg"
   },
   {
     id: 2,
-    name: "Meera Jasmine",
-    role: "Corporate Client",
-    content: "We used their services for a 20-person corporate retreat. The vehicle coordination and the itinerary planning were enterprise-grade. Highly recommended.",
-    location: "Bangalore",
+    name: "Khema Devi",
+    role: "Regular Client",
+    text: "I have used Go Trip a couple of times for airport drops and pickups. They are extremely reliable, prompt, and upfront with reservations and pricing. Highly professional service.",
+    rating: 5,
+    image: "https://randomuser.me/api/portraits/women/2.jpg"
   },
   {
     id: 3,
-    name: "Senthil Raj",
-    role: "Adventure Enthusiast",
-    content: "Clear pricing, no hidden costs, and very reliable drivers. It is hard to find this level of transparency in the travel industry today.",
-    location: "Theni",
+    name: "Susil Nembang Limbu",
+    role: "Business Traveler",
+    text: "Thank you for providing a good vehicle and driver. The car was clean and well-maintained, and the pickup was on time. Really appreciate the excellent service.",
+    rating: 5,
+    image: "https://randomuser.me/api/portraits/men/3.jpg"
   },
   {
     id: 4,
-    name: "Rajesh V",
-    role: "Regular Client",
-    content: "I have been booking with Wepzite for 2 years now. Their consistency in maintaining vehicle quality and driver punctuality is what keeps me coming back.",
-    location: "Madurai",
+    name: "Kusuma Kusuma",
+    role: "Mysore Day Trip",
+    text: "Great experience and safe driving. The cab arrived on time for our Mysore trip and covered all the important places in a single day. Safe drop at night. Highly recommended.",
+    rating: 5,
+    image: "https://randomuser.me/api/portraits/women/4.jpg"
+  },
+  {
+    id: 5,
+    name: "Shivam Kashyap",
+    role: "Temple Tour",
+    text: "Professional driver and the owner is quick to help. We booked a Tirupati Temple trip and had a great experience. One of the most reliable services in Bangalore.",
+    rating: 5,
+    image: "https://randomuser.me/api/portraits/men/5.jpg"
+  },
+  {
+    id: 6,
+    name: "Vinay Sharma",
+    role: "Pondicherry Trip",
+    text: "We traveled to Pondicherry and had a very good experience. Our driver, Vittal, was very nice and courteous. The vehicle provided was clean and well-maintained.",
+    rating: 5,
+    image: "https://randomuser.me/api/portraits/men/6.jpg"
+  },
+  {
+    id: 7,
+    name: "Suneetha Reddy",
+    role: "Emergency Booking",
+    text: "Needed a Tempo Traveller urgently after another service cancelled last minute. Go Trip Cabs arranged it immediately. The entire journey was smooth and hassle-free.",
+    rating: 5,
+    image: "https://randomuser.me/api/portraits/women/7.jpg"
+  },
+  {
+    id: 8,
+    name: "Chethan BM",
+    role: "Goa Trip",
+    text: "Amazing experience on my Goa trip! The driver was super friendly and went above and beyond to ensure a smooth ride. Rates were very reasonable for top-notch service.",
+    rating: 5,
+    image: "https://randomuser.me/api/portraits/men/8.jpg"
+  },
+  {
+    id: 9,
+    name: "Savitha HL",
+    role: "Yelagiri Outstation",
+    text: "We booked an Urbania for Yelagiri and the vehicle was awesome. Our driver was very cooperative and took us to all the spots. Awesome vehicle at an economic price!",
+    rating: 5,
+    image: "https://randomuser.me/api/portraits/women/9.jpg"
+  },
+  {
+    id: 10,
+    name: "Bhavana Reddy",
+    role: "South India Tour",
+    text: "Booked a Ciaz for a trip to Mysore, Coorg, and Ooty. The driver was highly professional, well-informed, and focused on our comfort throughout the journey.",
+    rating: 5,
+    image: "https://randomuser.me/api/portraits/women/10.jpg"
+  },
+  {
+    id: 11,
+    name: "Sagarika Mandal",
+    role: "Group Traveler",
+    text: "The drivers were very polite and helpful. We were three girls traveling and we felt very safe and comfortable. Highly recommend for female travelers.",
+    rating: 5,
+    image: "https://randomuser.me/api/portraits/women/11.jpg"
+  },
+  {
+    id: 12,
+    name: "Akash Maharana",
+    role: "Frequent User",
+    text: "Booked twice within a week. Both times the drivers were professional and on time. The cars were clean and the driving was excellent. Highly recommended.",
+    rating: 5,
+    image: "https://randomuser.me/api/portraits/men/12.jpg"
+  },
+  {
+    id: 13,
+    name: "A Samanta",
+    role: "Outstation Trip",
+    text: "Excellent service from start to finish. The driver was polite and professional, and the cab was clean and comfortable. The whole experience was stress-free.",
+    rating: 5,
+    image: "https://randomuser.me/api/portraits/men/13.jpg"
   }
 ];
 
@@ -100,7 +176,7 @@ const TestimonialSwiper = () => {
                   </div>
 
                   <p className="text-[13px] font-medium leading-relaxed text-slate-600 mb-8 italic flex-1">
-                    "{item.content}"
+                    "{item.text}"
                   </p>
 
                   <div className="flex items-center gap-4 pt-6 border-t border-slate-200/50">
@@ -112,7 +188,7 @@ const TestimonialSwiper = () => {
                         {item.name}
                       </h4>
                       <p className="text-[9px] font-bold text-orange-600 uppercase tracking-widest mt-0.5">
-                        {item.role} • {item.location}
+                        {item.role} 
                       </p>
                     </div>
                   </div>

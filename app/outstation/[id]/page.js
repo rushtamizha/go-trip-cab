@@ -221,7 +221,7 @@ export default function OutstationDetail() {
           </div>
         </div>
          <BookingForm carType={vehicle.name} tripType={"Outstation Cab Package"}/>
-        <PolicyAccordion/>
+        <PolicyAccordion showTerms = {true} />
 
         {/* Payment */}
         <div className="p-6 mb-6 bg-white rounded-2xl">

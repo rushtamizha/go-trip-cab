@@ -43,16 +43,16 @@ export default function TourBookingForm({ packageName = "General Inquiry" }) {
   };
 
   const inputClass =
-    "w-full h-14 px-5 rounded-2xl bg-orange-50/50 border border-orange-100 transition-all outline-none text-gray-900 placeholder:text-gray-400 focus:bg-white focus:border-orange-500 focus:ring-4 focus:ring-orange-500/5";
+    "w-full text-sm h-10 px-5 rounded-xl bg-orange-50/50 border border-orange-100 transition-all outline-none text-gray-900 placeholder:text-gray-400 focus:bg-white focus:border-orange-500 focus:ring-4 focus:ring-orange-500/5";
   const labelClass =
-    "flex items-center gap-2 mb-2 text-sm text-gray-700 font-bold tracking-tight";
+    "flex items-center gap-2 mb-1  text-gray-700 font-bold text-sm tracking-tight";
 
   return (
     <div className="w-full max-w-5xl mx-auto bg-white rounded-[2.5rem]   p-6 md:p-10 my-6">
       {/* Header */}
-      <div className="flex items-start justify-between mb-8">
+      <div className="flex items-start justify-between mb-4">
         <div>
-          <h2 className="text-2xl font-bold text-gray-900 ">
+          <h2 className="text-xl font-bold text-gray-900 ">
             Book Tour
           </h2>
           <p className="flex items-center gap-1 mt-1 text-sm font-medium text-orange-500">
@@ -72,7 +72,7 @@ export default function TourBookingForm({ packageName = "General Inquiry" }) {
           </label>
           <input
             type="text"
-            placeholder="E.g. Eswaran"
+            placeholder="E.g. John doe"
             className={inputClass}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
           />
@@ -130,7 +130,7 @@ export default function TourBookingForm({ packageName = "General Inquiry" }) {
       {/* Action Button */}
       <button
         onClick={handleWhatsApp}
-        className="w-full mt-10 h-16 rounded-xl bg-orange-500  text-white font-bold   transition-all active:scale-[0.98] flex items-center justify-center gap-3 group"
+        className="w-full mt-3 p-2  rounded-xl bg-orange-500  text-white font-bold   transition-all active:scale-[0.98] flex items-center justify-center gap-3 group"
       >
         <span>Check Availability</span>
       </button>

@@ -43,7 +43,7 @@ const ContactButton = () => {
             onClick={action.onClick}
             className={`${action.color} text-white w-14 h-14 flex items-center justify-center rounded-full shadow-xl border-2 border-white/20`}
           >
-            {action.icon}
+            <img src="/whatsapp.png" className='object-cover' alt="" />
           </motion.button>
         </div>
       ))}

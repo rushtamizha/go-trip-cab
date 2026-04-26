@@ -36,6 +36,7 @@ import {
 import PolicyAccordion from "@/components/ui/TermsConditions";
 import TourBookingForm from "@/components/ui/TourBooking";
 import InclusionExclusion from "@/components/InclusionExclusion";
+import { NotesPolicy } from "@/components/Notes";
 
 export default function TourPreview() {
   const { slug } = useParams();
@@ -372,6 +373,7 @@ export default function TourPreview() {
         </div>
 
         <InclusionExclusion />
+        <NotesPolicy/>
         <TourBookingForm packageName={tour.title} />
         <PolicyAccordion />
         

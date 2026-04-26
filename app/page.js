@@ -44,8 +44,8 @@ import FAQ from "@/components/Faq";
 const TABS = [
   { id: "tour", label: "Tour Packages", icon: Map },
   { id: "airport", label: "Airport", icon: Plane },
-  { id: "outstation", label: "Outstation", icon: Navigation },
   { id: "local", label: "Local", icon: Car },
+  { id: "outstation", label: "Outstation", icon: Navigation },
 ];
 
 // Hero Slider

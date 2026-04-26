@@ -103,7 +103,7 @@ const Footer = () => {
                 </div>
               </div>
             </Link>
-            <p className="max-w-xs text-[11px] font-medium leading-relaxed text-slate-400">
+            <p className="max-w-xs text-[11px] font-medium leading-relaxed text-white">
               go trip cabs provides premium, stress-free travel solutions. Our
               enterprise-grade planning ensures your safety and comfort
               throughout the journey.
@@ -123,20 +123,20 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="lg:col-span-2">
-            <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-white/50 mb-6 font-mono">
+            <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-white mb-6 font-mono">
               / Services
             </h4>
             <ul className="space-y-3">
               {[
                 { name: "About", href: "/about" },
-                { name: "Contact", href: "/contact" },
-                { name: "Refunds", href: "/refund" },
                 { name: "Terms", href: "/terms" },
+                { name: "Booking & Payment Process", href: "/terms/#booking" },
+                { name: "Cancellation Policy", href: "/terms/#cancellation" },
               ].map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-[12px] font-bold text-slate-300 hover:text-orange-500 transition-colors uppercase tracking-tight"
+                    className="text-[12px] font-bold text-white hover:text-orange-500 transition-colors uppercase tracking-tight"
                   >
                     {link.name}
                   </Link>
