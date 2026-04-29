@@ -141,7 +141,7 @@ const Testimonial = () => {
                   ))}
                 </div>
                 
-                <p className="mb-6 italic leading-relaxed text-gray-700">
+                <p className="mb-6  leading-relaxed text-gray-700">
                   "{item.text}"
                 </p>
               </div>

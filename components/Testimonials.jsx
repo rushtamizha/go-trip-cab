@@ -175,7 +175,7 @@ const TestimonialSwiper = () => {
                     <Quote size={20} className="text-slate-200" />
                   </div>
 
-                  <p className="text-[13px] font-medium leading-relaxed text-slate-600 mb-8 italic flex-1">
+                  <p className="text-[13px] font-medium leading-relaxed text-slate-600 mb-8  flex-1">
                     "{item.text}"
                   </p>
 

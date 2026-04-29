@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { useRouter, useParams } from 'next/navigation';
-import { company, localTaxis, localNotes } from '@/lib/data';
+import { company, localTaxis, localNotes, localIncludes, localExcludes } from '@/lib/data';
 import { ArrowLeft, Phone, MessageCircle, MapPin, Clock, IndianRupee, Users, Shield, Car, AlertCircle, Check, X, CreditCard, Route, Gauge } from 'lucide-react';
 import PolicyAccordion from '@/components/ui/TermsConditions';
 import BookingForm from '@/components/ui/BookingForm';
@@ -99,7 +99,7 @@ export default function LocalDetail() {
             </div>
           </div>
           {/* Extra usage examples */}
-          <div className="p-4 mt-4 border border-blue-200  bg-blue-50 rounded-xl">
+          <div className="p-4 mt-4 border border-blue-200 bg-blue-50 rounded-xl">
             <h4 className="mb-2 text-sm font-bold text-blue-800">Example: 6 Hours / 60 Kms Usage</h4>
             <div className="space-y-1 text-sm text-blue-700">
               <p>Base Package: &#8377;{vehicle.fare.toLocaleString('en-IN')} ({vehicle.hours}Hrs/{vehicle.kms}Kms)</p>
@@ -111,7 +111,7 @@ export default function LocalDetail() {
         </div>
 
         {/* Includes & Excludes */}
-        <PolicyToggle/>
+        <PolicyToggle Inclusion={localIncludes} Exclusion={localExcludes}/>
 
         {/* Notes */}
         <div className="hidden p-6 mb-6 bg-white rounded-2xl">

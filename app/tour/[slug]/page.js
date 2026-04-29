@@ -372,7 +372,7 @@ export default function TourPreview() {
           </div>
         </div>
 
-        <InclusionExclusion />
+        <InclusionExclusion Inclusion={tour.includes} Exclusion={tour.excludes}/>
         <NotesPolicy/>
         <TourBookingForm packageName={tour.title} />
         <PolicyAccordion />

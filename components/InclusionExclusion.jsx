@@ -4,12 +4,13 @@ import React, { useState } from "react";
 import { Check, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 // Importing your data
-import { Inclusion, Exclusion } from "@/lib/data";
 
-const PolicyToggle = () => {
+const PolicyToggle = ({Inclusion , Exclusion}) => {
   const [activeTab, setActiveTab] = useState("inclusion");
 
   const displayData = activeTab === "inclusion" ? Inclusion : Exclusion;
+
+  console.log(displayData)
 
   return (
     <div className="w-full max-w-4xl py-5 mx-auto bg-white rounded-3xl">
