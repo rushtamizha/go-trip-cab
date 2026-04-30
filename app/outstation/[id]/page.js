@@ -226,18 +226,18 @@ export default function OutstationDetail() {
                 <AlertCircle size={16} />
               </div>
               <h4 className="text-[11px] font-black tracking-[0.15em] text-orange-800 uppercase">
-                Example: 2-Day Round Trip (300km total)
+                Example: 2-Day Round Trip (600km total)
               </h4>
             </div>
 
             <div className="space-y-3">
               {/* Running Charge */}
               <div className="flex justify-between text-[13px] font-bold text-orange-900">
-                <span className="font-medium  text-orange-700/70">
-                  Total Distance Charge (300km × ₹{vehicle.farePerKm}):
+                <span className="font-medium text-orange-700/70">
+                  Total Distance Charge (600km × ₹{vehicle.farePerKm}):
                 </span>
                 <span>
-                  &#8377;{(300 * vehicle.farePerKm).toLocaleString("en-IN")}
+                  &#8377;{(600 * vehicle.farePerKm).toLocaleString("en-IN")}
                 </span>
               </div>
 
