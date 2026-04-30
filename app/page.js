@@ -649,7 +649,7 @@ export default function App() {
 
         {/* Policy notes for local */}
         {activeTab === "local" && (
-          <PolicySection title="Local Rental Notes" items={localNotes} />
+          <PolicySection title="Local Rental Policy" items={localNotes} />
         )}
 
         {/* Policy notes for outstation */}

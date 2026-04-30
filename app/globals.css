@@ -63,3 +63,49 @@
     display: none;
   }
 }
+
+/* =========================================
+   USER REQUESTED STYLING OVERRIDES (MOBILE & DESKTOP READABILITY)
+   "without disturbing any code just change font size and styles for same to all pages perfect for mobile and desktop not uppercase style"
+   ========================================= */
+
+/* Make base relative to screen for consistent scaling */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/* Ensure no uppercase is used and no wide tracking is applied */
+* {
+  text-transform: none !important;
+  letter-spacing: normal !important;
+}
+
+/* Enhance readability of extremely small explicit text sizes by rounding them up to text-sm */
+[class*="text-[8px]"],
+[class*="text-[9px]"],
+[class*="text-[10px]"],
+[class*="text-[11px]"],
+[class*="text-[12px]"],
+.text-xs {
+  font-size: 0.875rem !important; /* equivalent to text-sm */
+  line-height: 1.25rem !important;
+  font-weight: 500 !important;
+}
+
+/* Shift normal smalls slightly to text-base for better readability */
+.text-sm {
+  font-size: 1rem !important; /* equivalent to text-base */
+  line-height: 1.5rem !important;
+}
+
+/* Ensure global typography uniformity for standard tags, allowing Tailwind to handle if overridden gracefully, but applying consistent sensible defaults if lacking */
+body {
+  font-size: 1rem !important; 
+  line-height: 1.6 !important;
+}
+

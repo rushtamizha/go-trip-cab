@@ -219,9 +219,63 @@ export default function OutstationDetail() {
               </p>
             </div>
           </div>
+          {/* Outstation Billing Example */}
+          <div className="p-5 mt-6 border border-orange-200 bg-orange-50/50 rounded-2xl">
+            <div className="flex items-center gap-2 mb-4">
+              <div className="p-1.5 bg-orange-500 rounded-lg text-white">
+                <AlertCircle size={16} />
+              </div>
+              <h4 className="text-[11px] font-black tracking-[0.15em] text-orange-800 uppercase">
+                Example: 2-Day Round Trip (300km total)
+              </h4>
+            </div>
+
+            <div className="space-y-3">
+              {/* Running Charge */}
+              <div className="flex justify-between text-[13px] font-bold text-orange-900">
+                <span className="font-medium  text-orange-700/70">
+                  Total Distance Charge (300km × ₹{vehicle.farePerKm}):
+                </span>
+                <span>
+                  &#8377;{(300 * vehicle.farePerKm).toLocaleString("en-IN")}
+                </span>
+              </div>
+
+              {/* Driver Bata */}
+              <div className="flex justify-between text-[13px] font-bold text-orange-900">
+                <span className="font-medium text-orange-700/70">
+                  Driver Allowance (2 Days × ₹{vehicle.driverBata}):
+                </span>
+                <span>
+                  &#8377;{(2 * vehicle.driverBata).toLocaleString("en-IN")}
+                </span>
+              </div>
+
+
+
+              {/* Final Estimate */}
+              <div className="flex items-center justify-between pt-4 mt-2 border-t border-orange-200">
+                <div className="flex flex-col">
+                  <span className="text-[10px] font-black text-orange-600 uppercase tracking-widest">
+                    Estimated Total
+                  </span>
+                </div>
+                <span className="text-2xl font-black text-orange-600">
+                  &#8377;
+                  {(
+                    300 * vehicle.farePerKm +
+                    2 * vehicle.driverBata
+                  ).toLocaleString("en-IN")}
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
-         <BookingForm carType={vehicle.name} tripType={"Outstation Cab Package"}/>
-        <PolicyAccordion showTerms = {true} />
+        <BookingForm
+          carType={vehicle.name}
+          tripType={"Outstation Cab Package"}
+        />
+        <PolicyAccordion showTerms={true} />
 
         {/* Payment */}
         <div className="p-6 mb-6 bg-white rounded-2xl">
@@ -276,9 +330,7 @@ export default function OutstationDetail() {
             </div>
           </div>
         )}
-
       </div>
     </div>
   );
 }
-
