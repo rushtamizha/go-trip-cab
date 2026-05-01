@@ -59,7 +59,7 @@ function HeroSlider() {
     return () => clearInterval(timer);
   }, []);
   return (
-    <div className="relative w-full h-[400px] md:h-[500px] overflow-hidden">
+    <div className="relative mt-10 w-full h-[400px] md:h-[800px] overflow-hidden">
       {heroImages.map((img, i) => (
         <div
           key={i}
@@ -70,7 +70,7 @@ function HeroSlider() {
             alt={img.title}
             className="object-cover w-full h-full"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+          <div className="absolute inset-0 hidden bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
         </div>
       ))}
       <div className="absolute bottom-0 left-0 right-0 z-10 p-6 md:p-12"></div>

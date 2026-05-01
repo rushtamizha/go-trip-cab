@@ -119,7 +119,7 @@ const testimonials = [
 
 const TestimonialSwiper = () => {
   return (
-    <section className="overflow-hidden bg-white py-14">
+    <section className="py-1 overflow-hidden bg-white">
       <div className="px-6 mx-auto max-w-7xl">
         
         {/* Header with Navigation */}
@@ -152,7 +152,6 @@ const TestimonialSwiper = () => {
             slidesPerView={1}
             loop={true}
             autoplay={{ delay: 4000, disableOnInteraction: false }}
-            pagination={{ clickable: true, el: '.custom-pagination' }}
             navigation={{
               nextEl: ".testi-next",
               prevEl: ".testi-prev",

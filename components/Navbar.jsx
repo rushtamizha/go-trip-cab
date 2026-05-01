@@ -3,11 +3,23 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, Phone, MapPin, Menu, X, Mail, Clock, Instagram, Facebook, MessageSquare } from "lucide-react";
+import {
+  ChevronDown,
+  Phone,
+  MapPin,
+  Menu,
+  X,
+  Mail,
+  Clock,
+  Instagram,
+  Facebook,
+  MessageSquare,
+} from "lucide-react";
 import { company, tourPackages } from "@/lib/data";
 
 // 1. ContactHeader Component (Internal or separate import)
 const ContactHeader = () => {
+
   return (
     <div className="w-full text-white bg-orange-600 border-b border-white/5">
       <div className="flex items-center justify-between px-6 mx-auto h-14 max-w-7xl">
@@ -31,13 +43,18 @@ const ContactHeader = () => {
         <div className="flex items-center gap-6">
           <div className="h-3 w-[1px] bg-white/10" />
           <div className="flex items-center gap-4 pl-2 border-white/10">
-            <a href="#" className="text-white transition-colors hover:text-white">
+            <a
+              href="#"
+              className="text-white transition-colors hover:text-white"
+            >
               <Instagram size={15} />
             </a>
-            <a href="#" className="text-white transition-colors hover:text-white">
+            <a
+              href="#"
+              className="text-white transition-colors hover:text-white"
+            >
               <Facebook size={15} />
             </a>
-            
           </div>
         </div>
       </div>
@@ -48,12 +65,13 @@ const ContactHeader = () => {
 const Navbar = () => {
   const [isDestOpen, setIsDestOpen] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [isPackagesOpen, setIsPackagesOpen] = useState(false);
 
   return (
     // Moved 'fixed' and 'z-index' here to wrap both components
     <header className="fixed top-0 left-0 right-0 z-[100]">
       <ContactHeader />
-      
+
       <nav className="py-3 bg-white border-b shadow-sm border-slate-100">
         <div className="flex items-center justify-between px-4 mx-auto max-w-7xl">
           {/* Logo Section */}
@@ -77,7 +95,9 @@ const Navbar = () => {
                     <span className="text-[8px] font-black uppercase tracking-[0.25em] text-orange-500">
                       {tag}
                     </span>
-                    {i < 2 && <span className="w-1 h-1 rounded-full bg-slate-200" />}
+                    {i < 2 && (
+                      <span className="w-1 h-1 rounded-full bg-slate-200" />
+                    )}
                   </React.Fragment>
                 ))}
               </div>
@@ -86,7 +106,10 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="items-center hidden gap-8 md:flex">
-            <Link href="/" className="text-xs font-black tracking-widest uppercase transition-colors text-slate-500 hover:text-orange-600">
+            <Link
+              href="/"
+              className="text-xs font-black tracking-widest uppercase transition-colors text-slate-500 hover:text-orange-600"
+            >
               Home
             </Link>
 
@@ -96,7 +119,11 @@ const Navbar = () => {
               onMouseLeave={() => setIsDestOpen(false)}
             >
               <button className="flex items-center gap-1 py-2 text-xs font-black tracking-widest uppercase outline-none text-slate-500 hover:text-orange-600">
-                Destinations <ChevronDown size={10} className={`transition-transform duration-300 ${isDestOpen ? "rotate-180" : ""}`} />
+                Destinations{" "}
+                <ChevronDown
+                  size={10}
+                  className={`transition-transform duration-300 ${isDestOpen ? "rotate-180" : ""}`}
+                />
               </button>
 
               <AnimatePresence>
@@ -114,7 +141,11 @@ const Navbar = () => {
                           href={`/tour/${tour.slug}`}
                           className="relative overflow-hidden group h-28 rounded-2xl bg-slate-100"
                         >
-                          <img src={tour.gallery[0]} alt={tour.title} className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-125" />
+                          <img
+                            src={tour.gallery[0]}
+                            alt={tour.title}
+                            className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-125"
+                          />
                           <div className="absolute inset-0 flex items-end p-3 transition-all bg-slate-900/40 group-hover:bg-orange-600/40">
                             <span className="text-[9px] font-black text-white uppercase tracking-tight leading-tight">
                               {tour.title}
@@ -128,12 +159,20 @@ const Navbar = () => {
               </AnimatePresence>
             </div>
 
-            <Link href="/about" className="text-xs font-black tracking-widest uppercase transition-colors text-slate-500 hover:text-orange-600">
+            <Link
+              href="/about"
+              className="text-xs font-black tracking-widest uppercase transition-colors text-slate-500 hover:text-orange-600"
+            >
               About
             </Link>
-            <Link href="/contact" className="text-xs font-black tracking-widest uppercase transition-colors text-slate-500 hover:text-orange-600">
+            <Link
+              href="/contact"
+              className="text-xs font-black tracking-widest uppercase transition-colors text-slate-500 hover:text-orange-600"
+            >
               Contact
             </Link>
+
+             
           </div>
 
           {/* Action Button */}
@@ -144,7 +183,10 @@ const Navbar = () => {
             >
               <Phone size={12} /> Call Expert
             </a>
-            <button onClick={() => setIsMobileOpen(true)} className="p-2 rounded-lg md:hidden text-slate-900 bg-slate-50">
+            <button
+              onClick={() => setIsMobileOpen(true)}
+              className="p-2 rounded-lg md:hidden text-slate-900 bg-slate-50"
+            >
               <Menu size={22} />
             </button>
           </div>
@@ -169,24 +211,104 @@ const Navbar = () => {
               className="fixed right-0 top-0 bottom-0 z-[120] w-[300px] bg-white flex flex-col shadow-2xl"
             >
               <div className="flex items-center justify-between p-6 border-b bg-slate-50">
-                <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Menu</span>
-                <button onClick={() => setIsMobileOpen(false)} className="p-2 transition-colors rounded-full hover:bg-white">
+                <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">
+                  Menu
+                </span>
+                <button
+                  onClick={() => setIsMobileOpen(false)}
+                  className="p-2 transition-colors rounded-full hover:bg-white"
+                >
                   <X size={20} />
                 </button>
               </div>
               <div className="flex-1 p-4 space-y-1 overflow-y-auto">
-                <Link href="/" className="block p-4 text-sm font-black tracking-widest uppercase text-slate-900 hover:bg-orange-50 rounded-xl" onClick={() => setIsMobileOpen(false)}>Home</Link>
-                <div className="pt-4 pb-2 px-4 text-[10px] font-black text-orange-600 uppercase tracking-[0.2em]">Our Packages</div>
-                {tourPackages.map((tour) => (
-                  <Link key={tour.slug} href={`/tour/${tour.slug}`} className="flex items-center justify-between p-4 text-xs font-bold tracking-tight uppercase text-slate-600 hover:bg-slate-50 rounded-xl" onClick={() => setIsMobileOpen(false)}>
-                    {tour.title} <ChevronDown size={14} className="-rotate-90 text-slate-300" />
-                  </Link>
-                ))}
-                <Link href="/about" className="block p-4 text-sm font-black tracking-widest uppercase text-slate-900 hover:bg-orange-50 rounded-xl" onClick={() => setIsMobileOpen(false)}>About</Link>
-                <Link href="/contact" className="block p-4 text-sm font-black tracking-widest uppercase text-slate-900 hover:bg-orange-50 rounded-xl" onClick={() => setIsMobileOpen(false)}>Contact</Link>
+                <Link
+                  href="/"
+                  className="block p-4 text-sm font-semibold tracking-widest uppercase text-slate-900 hover:bg-orange-50 rounded-xl"
+                  onClick={() => setIsMobileOpen(false)}
+                >
+                  Home
+                </Link>
+
+                {/* Dropdown Toggle Header */}
+                <button
+                  onClick={() => setIsPackagesOpen(!isPackagesOpen)}
+                  className="flex items-center justify-between w-full p-4 text-sm font-semibold tracking-widest uppercase transition-colors text-slate-900 hover:bg-orange-50 rounded-xl"
+                >
+                  <span>Our Packages</span>
+                  <motion.div
+                    animate={{ rotate: isPackagesOpen ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <ChevronDown size={18} className="text-orange-600" />
+                  </motion.div>
+                </button>
+
+                {/* Animated Accordion Content */}
+                <AnimatePresence>
+                  {isPackagesOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="ml-2 overflow-hidden bg-slate-50/50 rounded-xl"
+                    >
+                      {tourPackages.map((tour) => (
+                        <Link
+                          key={tour.slug}
+                          href={`/tour/${tour.slug}`}
+                          className="flex items-center justify-between p-4 pl-6 text-[11px] font-bold tracking-tight uppercase text-slate-600 hover:text-orange-600 transition-colors"
+                          onClick={() => setIsMobileOpen(false)}
+                        >
+                          {tour.title}
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+
+                <Link
+                  href="/about"
+                  className="block p-4 text-sm font-semibold tracking-widest uppercase text-slate-900 hover:bg-orange-50 rounded-xl"
+                  onClick={() => setIsMobileOpen(false)}
+                >
+                  About
+                </Link>
+                <Link
+                  href="/contact"
+                  className="block p-4 text-sm font-semibold tracking-widest uppercase text-slate-900 hover:bg-orange-50 rounded-xl"
+                  onClick={() => setIsMobileOpen(false)}
+                >
+                  Contact
+                </Link>
+                <Link
+                  href="/terms"
+                  className="block p-4 text-sm font-semibold tracking-widest uppercase text-slate-900 hover:bg-orange-50 rounded-xl"
+                  onClick={() => setIsMobileOpen(false)}
+                >
+                  Terms & Conditions
+                </Link>
+                <Link
+                  href="/payment-policy"
+                  className="block p-4 text-sm font-semibold tracking-widest uppercase text-slate-900 hover:bg-orange-50 rounded-xl"
+                  onClick={() => setIsMobileOpen(false)}
+                >
+                  Payment Policy
+                </Link>
+                <Link
+                  href="/cancellation-policy"
+                  className="block p-4 text-sm font-semibold tracking-widest uppercase text-slate-900 hover:bg-orange-50 rounded-xl"
+                  onClick={() => setIsMobileOpen(false)}
+                >
+                  Cancellation Policy
+                </Link>
               </div>
               <div className="p-6 border-t bg-slate-50">
-                <a href={`tel:${company.phone}`} className="flex items-center justify-center w-full h-12 gap-3 text-xs font-black tracking-widest text-white uppercase shadow-xl bg-slate-900 rounded-xl shadow-slate-900/20">
+                <a
+                  href={`tel:${company.phone}`}
+                  className="flex items-center justify-center w-full h-12 gap-3 text-xs font-black tracking-widest text-white uppercase shadow-xl bg-slate-900 rounded-xl shadow-slate-900/20"
+                >
                   <Phone size={14} /> Call Support
                 </a>
               </div>

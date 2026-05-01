@@ -86,6 +86,27 @@ const Footer = () => {
               ))}
             </div>
           </div>
+          <div className="lg:col-span-5">
+            <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-orange-500 mb-6">/ Get In Touch</h4>
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+              <div className="space-y-4">
+                <div className="flex gap-3">
+                  <MapPin size={16} className="text-orange-500 shrink-0" />
+                  <p className="text-[11px] text-slate-300 font-medium leading-relaxed">
+                    #20, Sarjapur Main Rd, Bangalore – 560035
+                  </p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Phone size={16} className="text-orange-500 shrink-0" />
+                  <p className="text-[12px] font-black">{company.phoneDisplay}</p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Mail size={16} className="text-orange-500 shrink-0" />
+                  <p className="text-[12px] font-black">info@gotripcabs.in</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
           {/* Quick Links Column (Requested Addition) */}
           <div className="lg:col-span-2">
@@ -127,25 +148,7 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-
-          {/* Contact Column */}
-          <div className="lg:col-span-5">
-            <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-orange-500 mb-6">/ Get In Touch</h4>
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-              <div className="space-y-4">
-                <div className="flex gap-3">
-                  <MapPin size={16} className="text-orange-500 shrink-0" />
-                  <p className="text-[11px] text-slate-300 font-medium leading-relaxed">
-                    #20, Sarjapur Main Rd, Bangalore – 560035
-                  </p>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Phone size={16} className="text-orange-500 shrink-0" />
-                  <p className="text-[12px] font-black">{company.phoneDisplay}</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          
         </div>
 
         {/* Bottom Bar */}

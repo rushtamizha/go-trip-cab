@@ -263,7 +263,7 @@ export default function OutstationDetail() {
                 <span className="text-2xl font-black text-orange-600">
                   &#8377;
                   {(
-                    300 * vehicle.farePerKm +
+                    600 * vehicle.farePerKm +
                     2 * vehicle.driverBata
                   ).toLocaleString("en-IN")}
                 </span>
