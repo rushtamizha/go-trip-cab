@@ -24,6 +24,7 @@ const Footer = () => {
     { name: "Kerala", img: "https://www.experiencetravelgroup.com/wp-content/uploads/2025/08/A.jpg" },
     { name: "Tamil Nadu", img: "https://hblimg.mmtcdn.com/content/hubble/img/Tamil%20Nadu/mmt/destination/m_destination-Tamil%20Nadu-landscape_l_400_640.jpg" },
     { name: "Telangana", img: "https://s7ap1.scene7.com/is/image/incredibleindia/2-charminar-hyderabad-telangana-state-hero?qlt=82&ts=1726653487606" },
+     { name: "Goa", img: "https://s7ap1.scene7.com/is/image/incredibleindia/1-palolem-beach-goa-goa-city-hero?qlt=82&ts=1742182084999" },
   ];
 
   const services = [
@@ -114,7 +115,7 @@ const Footer = () => {
 
           {/* Destinations Column */}
           <div className="lg:col-span-3">
-            <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-white/50 mb-6 font-mono">/ Popular Tours</h4>
+            <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-orange-500 mb-6 font-mono">/ Popular Tours</h4>
             <ul className="space-y-3">
               {featuredTours.map((tour) => (
                 <li key={tour.slug}>
