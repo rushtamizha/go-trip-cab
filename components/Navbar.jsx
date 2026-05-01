@@ -76,9 +76,9 @@ const Navbar = () => {
         <div className="flex items-center justify-between px-4 mx-auto max-w-7xl">
           {/* Logo Section */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative flex items-center justify-center overflow-hidden transition-transform h-11 w-11 rounded-xl bg-slate-900 group-hover:scale-105">
+            <div className="relative flex items-center justify-center overflow-hidden transition-transform h-11 w-11 rounded-xl group-hover:scale-105">
               <img
-                src="/logo.jpg"
+                src="/logo.png"
                 alt={`${company.name} Logo`}
                 className="object-cover w-full h-full"
               />

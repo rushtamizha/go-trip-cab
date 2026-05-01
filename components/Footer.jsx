@@ -69,14 +69,17 @@ const Footer = () => {
           {/* Brand & Info */}
           <div className="space-y-6 lg:col-span-3">
             <Link href="/" className="flex items-center gap-3">
-              <img src="/logo.jpg" alt="Logo" className="object-cover w-10 h-10 border rounded-lg border-white/10" />
+              <img src="/logo.png" alt="Logo" className="object-cover w-10 h-10 border rounded-lg border-white/10" />
               <div>
                 <h2 className="text-sm font-black leading-none tracking-tighter uppercase">{company.name}</h2>
-                <span className="text-[8px] text-orange-500 font-bold uppercase tracking-[0.3em]">Premium Cabs</span>
+                <span className="text-[8px] text-orange-500 font-bold uppercase tracking-[0.3em]">{company.tagline}</span>
               </div>
             </Link>
             <p className="text-[11px] leading-relaxed text-slate-400 font-medium">
-              Reliable, safe, and professional cab services across South India. Experience luxury and comfort on every mile.
+              GO TRIP CABS offers reliable 24/7 cab services, including outstation travel, airport pickups and drops, tourist vehicles, bus and tempo traveller rentals, and fully customized tour packages tailored to your needs.
+GO TRIP CABS 🚖
+Outstation Cabs from Bangalore | Customized Tour Packages
+Safe • Reliable • Affordable
             </p>
             <div className="flex gap-2">
               {[Instagram, Facebook, Twitter].map((Icon, i) => (
