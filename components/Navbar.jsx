@@ -10,18 +10,18 @@ import { company, tourPackages } from "@/lib/data";
 const ContactHeader = () => {
   return (
     <div className="w-full text-white bg-orange-600 border-b border-white/5">
-      <div className="flex items-center justify-between h-10 px-6 mx-auto max-w-7xl">
+      <div className="flex items-center justify-between px-6 mx-auto h-14 max-w-7xl">
         {/* Operations Info */}
         <div className="flex items-center gap-8">
           <div className="flex items-center gap-2">
-            <Phone size={12} className="text-white" />
-            <span className="text-[9px] font-black uppercase tracking-[0.15em] text-white">
-              9886673753
+            <Phone size={14} className="text-white" />
+            <span className="text-sm font-black uppercase tracking-[0.15em] text-white">
+              (+91 ) 9886673753
             </span>
           </div>
           <div className="flex items-center gap-2">
-            <MapPin size={12} className="text-white" />
-            <span className="text-[9px] font-black uppercase tracking-[0.15em] text-white">
+            <MapPin size={14} className="text-white" />
+            <span className="text-sm font-black uppercase tracking-[0.15em] text-white">
               Bangalore
             </span>
           </div>
@@ -29,14 +29,13 @@ const ContactHeader = () => {
 
         {/* Direct Contact & Socials */}
         <div className="flex items-center gap-6">
-          Follow
           <div className="h-3 w-[1px] bg-white/10" />
           <div className="flex items-center gap-4 pl-2 border-white/10">
             <a href="#" className="text-white transition-colors hover:text-white">
-              <Instagram size={13} />
+              <Instagram size={15} />
             </a>
             <a href="#" className="text-white transition-colors hover:text-white">
-              <Facebook size={13} />
+              <Facebook size={15} />
             </a>
             
           </div>
