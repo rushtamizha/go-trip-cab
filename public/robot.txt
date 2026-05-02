@@ -1,0 +1,19 @@
+# https://www.gotripcabs.in/robots.txt
+
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Disallow sensitive or redundant pages
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /payment-success
+Disallow: /booking-confirmation
+
+# Optimization for crawl budget
+Crawl-delay: 1
+
+# Host and Sitemap location
+Host: https://www.gotripcabs.in
+Sitemap: https://www.gotripcabs.in/sitemap.xml

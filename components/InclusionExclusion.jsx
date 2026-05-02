@@ -10,7 +10,6 @@ const PolicyToggle = ({Inclusion , Exclusion}) => {
 
   const displayData = activeTab === "inclusion" ? Inclusion : Exclusion;
 
-  console.log(displayData)
 
   return (
     <div className="w-full max-w-4xl py-5 mx-auto bg-white rounded-3xl">
