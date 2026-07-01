@@ -59,7 +59,7 @@ function HeroSlider() {
     return () => clearInterval(timer);
   }, []);
   return (
-    <div className="relative mt-10 w-full h-[800px] md:h-[800px] overflow-hidden">
+    <div className="relative mt-20 w-full h-[300px] md:h-[500px] overflow-hidden">
       {heroImages.map((img, i) => (
         <div
           key={i}

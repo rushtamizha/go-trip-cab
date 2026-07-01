@@ -19,7 +19,6 @@ import { company, tourPackages } from "@/lib/data";
 
 // 1. ContactHeader Component (Internal or separate import)
 const ContactHeader = () => {
-
   return (
     <div className="w-full text-white bg-orange-600 border-b border-white/5">
       <div className="flex items-center justify-between px-6 mx-auto h-14 max-w-7xl">
@@ -76,7 +75,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between px-4 mx-auto max-w-7xl">
           {/* Logo Section */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative flex items-center justify-center overflow-hidden transition-transform h-11 w-11 rounded-xl group-hover:scale-105">
+            <div className="relative flex items-center justify-center w-12 h-12 overflow-hidden transition-transform rounded-xl group-hover:scale-105">
               <img
                 src="/logo.png"
                 alt={`${company.name} Logo`}
@@ -90,16 +89,7 @@ const Navbar = () => {
                 {company.name}
               </h1>
               <div className="mt-1 flex items-center gap-1.5">
-                {["Drive", "Discover", "Explore"].map((tag, i) => (
-                  <React.Fragment key={tag}>
-                    <span className="text-[8px] font-black uppercase tracking-[0.25em] text-orange-500">
-                      {tag}
-                    </span>
-                    {i < 2 && (
-                      <span className="w-1 h-1 rounded-full bg-slate-200" />
-                    )}
-                  </React.Fragment>
-                ))}
+                <span className="text-[8px] text-orange-500">Travel Smart.Travel Safe</span>
               </div>
             </div>
           </Link>
@@ -171,8 +161,6 @@ const Navbar = () => {
             >
               Contact
             </Link>
-
-             
           </div>
 
           {/* Action Button */}
